@@ -24,8 +24,9 @@ Wi-Fi, Bluetooth, orientation and final audio fixes were applied live after the
 last complete boot. Their automatic startup after a full reboot remains a release
 gate. Existing userdata may conceal first-install problems.
 
-The latest thermal/camera source changes are NOT in the existing20261019 draft ZIP,
-which remains pinned to device-source snapshot1ac98e4. No new installer was flashed.
+The thermal/camera/microphone fixes are packaged in [e2e1](E2E1.md), but are NOT in
+the older20261019 draft ZIP pinned to device-source snapshot1ac98e4. Neither new
+installer has been flashed for acceptance testing.
 
 Do not claim hardware microphone isolation, complete voice-satellite qualification, Bluetooth
 audio, boot-persistent thermal management, clean install, or safe OTA updates.
@@ -61,4 +62,4 @@ unmuted. All160,000 samples were read without errors; no audio was retained. The
 successful60s test preceded the guard; guarded long-duration testing remains open.
 Speech intelligibility, echo cancellation, sustained wake word listening, satellite
 app acceptance and reboot persistence remain unqualified. UNPROCESSED/raw capture
-is not repaired or claimed. Existing release ZIP still lacks this wrapper.
+is not repaired or claimed. e2e1 includes this wrapper; the older candidate does not.

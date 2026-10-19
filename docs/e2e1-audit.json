@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "ota_sha256": "14cc3212120c6341358e26020519f660cb3ff02122d8fe06d4bc6d040aaa4000",
+  "partition_targets": [
+    "/dev/block/platform/bootdevice/by-name/boot",
+    "/dev/block/platform/bootdevice/by-name/system",
+    "/dev/block/platform/bootdevice/by-name/vendor"
+  ],
+  "required_vendor_files": 37,
+  "hardware_followup_required": true,
+  "verified_prebuilt_hashes": 86,
+  "hardware_sha256": {
+    "VENDOR/lib/hw/audio.primary.athena.so": "2e6bfee567bb72d4e4c051af8aac30fbb0ba503eb24da6252b42257746a4e2c6",
+    "VENDOR/lib/hw/thermal.athena.so": "5e5edded502877fa01730067ee7efd32e19f6503fada57c2172a0556a70d2cb2",
+    "SYSTEM/system_ext/framework/athena-thermal-policy.jar": "d4b74d13587313368b8b513e9c1fa331016c632a9b1a8e2ebb3a3ab0f45a96c1",
+    "BOOT/kernel": "caeacd2985344ebdb46192c2cb861b1ab2193674dfc2c39cf1161738dad2c8eb"
+  },
+  "on_device_install_tested": false
+}

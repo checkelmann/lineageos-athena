@@ -9,25 +9,27 @@ Do not use images for Echo Show 8 first-generation, third-generation, or other d
 The development device has reached `sys.boot_completed=1` on two boots without
 wiping userdata. Display, landscape/touch mapping, Wi-Fi internet access and speaker
 playback were confirmed on that device. Bluetooth reaches ON; pairing is not yet
-validated. The freshly packaged installer must still be tested independently.
+validated. The **e2e1 experimental installer** includes the later hardware fixes,
+but still needs an independent TWRP installation and boot test. See [e2e1](docs/E2E1.md).
 
 **Privacy warning:** the microphone/privacy button also acts as a screen power
 button. A new software guard makes privacy-on built-in MIC capture entirely silent
 in the tested10s interval, but hardware isolation has NOT been verified.
-Screen off is not proof of microphone
-privacy. Ordinary processed MIC capture now receives a signal in a foreground app;
+Screen off is not proof of microphone privacy. Ordinary processed MIC capture now
+receives a signal in a foreground app;
 voice-satellite speech quality, echo cancellation and long-term listening still need
-validation. This newer compatibility fix is not in the existing candidate ZIP.
+validation. These fixes are included in e2e1, not the older October 19 candidate.
 
 Other limitations: SELinux permissive, old stock kernel/vendor security level,
 unencrypted `/data` configuration and userdebug/test-key build. Camera preview and
-thermal readings/OEM policies are restored in current source/live development, but
-NOT in the existing October19 candidate ZIP. Reboot persistence and heat behavior
+thermal readings/OEM policies are restored in current source/live development and
+packaged in e2e1. Reboot persistence and heat behavior
 remain untested. This is a bring-up build, not a secure daily-use release.
 
 ## Documentation
 
-- [2026-10-19 candidate and packaging audit](docs/CANDIDATE.md)
+- [e2e1 experimental installation-test build](docs/E2E1.md)
+- [Older 2026-10-19 candidate and packaging audit](docs/CANDIDATE.md)
 - [Hardware status and known issues](docs/STATUS.md)
 - [Installation and recovery safety](docs/INSTALL.md)
 - [Build and source requirements](docs/BUILD.md)

@@ -60,6 +60,7 @@ LOCAL_PATH := device/amazon/athena/prebuilt/vendor/lib
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libutils-v32
+LOCAL_STRIP_MODULE := false
 LOCAL_MULTILIB := 32
 LOCAL_SRC_FILES_arm := libutils-v32.so
 LOCAL_MODULE_SUFFIX := .so
@@ -72,6 +73,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libcrypto-v32
+LOCAL_STRIP_MODULE := false
 LOCAL_MULTILIB := 32
 LOCAL_SRC_FILES_arm := libcrypto-v32.so
 LOCAL_MODULE_SUFFIX := .so

@@ -46,6 +46,9 @@ Do not point extraction at personal userdata or upload your stock dump to Git.
 - VNDK v28 ARM32 prebuilts referenced by `vndk/Android.mk`, plus the validated
   libutils-v32.so and libcrypto-v32.so copies in `prebuilt/vendor/lib/`.
 
+The two validated VNDK32 copies use `LOCAL_STRIP_MODULE := false` to preserve their
+exact bytes, rather than re-stripping them during packaging.
+
 Use `docs/prebuilt-sha256.txt` to check the build machine's exact additional assets.
 The compiled shim hash may differ if toolchain/linker versions differ. Preserve
 copyright notices; binary redistribution permissions have not been established here.
@@ -103,6 +106,11 @@ source build/envsetup.sh
 lunch lineage_athena-userdebug
 m -j8 bacon
 ```
+
+To reproduce the e2e1 version suffix, export `TARGET_UNOFFICIAL_BUILD_ID=e2e1` before
+the build. Move previously installed diagnostic native-test outputs out of the
+product's `data/nativetest` staging area before creating a distributable target-files
+package; do not include personal data or diagnostic apps in the ROM.
 
 Result: `out/target/product/athena/lineage-18.1-<date>-UNOFFICIAL-athena.zip`.
 This is userdebug/test-key, not production-signed. SELinux remains permissive.

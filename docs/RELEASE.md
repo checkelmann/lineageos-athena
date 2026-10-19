@@ -1,5 +1,8 @@
 # Candidate release checklist
 
+Current installation-test package: [e2e1](E2E1.md), with its own enhanced
+[packaging audit](e2e1-audit.json). Packaging success is not installation acceptance.
+
 ## Packaging
 
 - [x] Build succeeds; ZIP integrity passes.
