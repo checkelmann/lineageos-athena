@@ -32,8 +32,13 @@ Do not point extraction at personal userdata or upload your stock dump to Git.
   libmsb.so, libmsrc.so, libedgeflow_core_neon.so, patched libladder.so,
   libunwindstack_shim.so, libhardware_legacy-athena.so.
 - `prebuilt/vendor/lib/hw`: stock hwcomposer.mt8183.so and sensors.athena.so.
+- Additional stock `prebuilt/vendor/lib`: fireos.hardware.amazonthermal@1.1.so,
+  libLab126CameraMetrics.so, fireos.hardware.camportal@1.0.so,
+  vendor.mediatek.hardware.camera.ccap@1.0.so and both OV13855 IdxMgr libraries.
+- `prebuilt/camera/`:50 matching OV13855 tuning/scene and plugin dependency libraries
+  selected by device.mk; see the hash inventory for exact names.
 - `prebuilt/vendor/lib/modules`: matching wlan_mt76x3_sdio_prealloc.ko,
-  wlan_mt76x3_sdio.ko and btmtksdio.ko. Expected vermagic: 4.4.146+ ARMv7.
+  wlan_mt76x3_sdio.ko, btmtksdio.ko and thermal_module.ko. Expected vermagic: 4.4.146+ ARMv7.
 - `prebuilt/vendor/firmware`: EEPROM_MT7663.bin, WIFI_RAM_CODE_MT7663.bin,
   mt7663_patch_e2_hdr.bin, wifi.cfg, TxPwrLimit_MT76x3.dat and bt.cfg.
 - Stock `prebuilt/vendor/bin/hw/android.hardware.wifi@1.0-service`.
@@ -74,6 +79,11 @@ clang --target=armv7a-linux-androideabi30 -shared -fPIC -fuse-ld=lld -nostdlib \
 ```
 
 ## Compile
+
+Current device packages also build the native read-only `thermal.athena` HAL and
+`athena-thermal-policy` system_ext Java helper from `athena/thermal/`. The helper
+uses platform-private HwBinder APIs to restore the original OEM locale policy;
+do not move it to a vendor Java module with restricted SDK APIs.
 
 From the prepared Android source tree on Linux:
 

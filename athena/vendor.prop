@@ -118,3 +118,5 @@ vendor.mediatek.wlan.module.postfix=_consys_mt8183
 ro.vendor.mtk_dhcpv6c_wifi=1
 ro.vendor.wfd.dummy.enable=1
 ro.vendor.wfd.iframesize.level=0
+# Read live sysfs temperatures; stock mtktz interface returns stale -274C.
+ro.hardware.thermal=athena

@@ -11,13 +11,16 @@ wiping userdata. Display, landscape/touch mapping, Wi-Fi internet access and spe
 playback were confirmed on that device. Bluetooth reaches ON; pairing is not yet
 validated. The freshly packaged installer must still be tested independently.
 
-**Privacy warning:** the microphone/privacy button currently acts as a screen
-power button. Microphone isolation has NOT been verified. Screen off is not proof
-that microphones are disabled. Do not rely on this port for microphone privacy.
+**Privacy warning:** the microphone/privacy button also acts as a screen power
+button. Latest live tests show mute-state changes and a mostly silent muted capture,
+but hardware isolation has NOT been verified. Screen off is not proof of microphone
+privacy. Ordinary MIC capture remains broken; voice-recognition mode receives signal.
 
 Other limitations: SELinux permissive, old stock kernel/vendor security level,
-unencrypted `/data` configuration, userdebug/test-key build, camera and thermal
-HAL failures. This is a bring-up build, not a secure daily-use release.
+unencrypted `/data` configuration and userdebug/test-key build. Camera preview and
+thermal readings/OEM policies are restored in current source/live development, but
+NOT in the existing October19 candidate ZIP. Reboot persistence and heat behavior
+remain untested. This is a bring-up build, not a secure daily-use release.
 
 ## Documentation
 

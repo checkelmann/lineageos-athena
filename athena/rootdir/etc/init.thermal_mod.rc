@@ -1,0 +1,15 @@
+# Stock virtual sensors, critical-temperature driver and cooling interfaces.
+on post-fs-data
+    insmod /vendor/lib/modules/thermal_module.ko
+
+# Restore the stock kernel cooling profiles, which FireOS normally requests.
+# The process has no recording function and uses only the existing OEM HAL.
+service athena-thermal-policy /system/bin/app_process -Djava.class.path=/system_ext/framework/athena-thermal-policy.jar /system/bin AthenaStockThermalPolicy --apply-stock-policy
+    class late_start
+    user system
+    group system
+    disabled
+    oneshot
+
+on property:init.svc.amazonthermal-1.0=running
+    start athena-thermal-policy

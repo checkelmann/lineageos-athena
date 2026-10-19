@@ -1,6 +1,6 @@
 # Hardware status
 
-Recorded 2026-10-18. These results describe the development device, not a completed
+Recorded 2026-10-19. These results describe the development device, not a completed
 fresh-installer acceptance test.
 
 | Component | Observed status |
@@ -12,10 +12,10 @@ fresh-installer acceptance test.
 | Speakers | User-confirmed playback |
 | Volume | A11 curves restored; policy attenuation verified, final audible test pending |
 | Sensors | Service running; individual sensor accuracy untested |
-| Microphones | Recording and hardware privacy isolation untested |
-| Privacy button | Incorrectly treated as POWER; screen sleep/wake |
-| Camera | Not working; missing vendor dependencies |
-| Thermal | Amazon thermal service fails to load a vendor dependency; behavior unvalidated |
+| Microphones | Voice-recognition source receives signal; ordinary MIC source fails in vendor DSP pipeline |
+| Privacy button | Mute state and camera availability follow switch; also incorrectly sends POWER; muted capture has startup transient then zeros |
+| Camera | Latest source/live:2 devices; preview user-confirmed with privacy off; photo/video untested |
+| Thermal | Latest source/live:real CPU/skin readings and original OEM virtual-zone cooling profiles restored; no heat qualification |
 | USB ADB | Development access works; key-free release authorization untested |
 | SELinux | Permissive |
 | Userdata encryption | Disabled in port fstab; no wipe performed on development device |
@@ -24,5 +24,11 @@ Wi-Fi, Bluetooth, orientation and final audio fixes were applied live after the
 last complete boot. Their automatic startup after a full reboot remains a release
 gate. Existing userdata may conceal first-install problems.
 
-Do not claim microphone privacy, camera, Bluetooth audio, automatic thermal
-management, clean install, or safe OTA updates until individually tested.
+The latest thermal/camera source changes are NOT in the existing20261019 draft ZIP,
+which remains pinned to device-source snapshot1ac98e4. No new installer was flashed.
+
+Do not claim hardware microphone isolation, general microphone support, Bluetooth
+audio, boot-persistent thermal management, clean install, or safe OTA updates.
+Voice-recognition capture was nonzero unmuted. Muted capture had100 low-amplitude
+nonzero samples in its first second, then9 seconds of exact zeros. This is not a
+hardware-isolation certification; intelligibility and sensitivity remain untested.

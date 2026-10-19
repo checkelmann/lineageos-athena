@@ -1,0 +1,17 @@
+cc_library_shared {
+    name: "thermal.athena",
+    vendor: true,
+    relative_install_path: "hw",
+    srcs: ["thermal.c"],
+    header_libs: ["libhardware_headers"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}
+
+java_library {
+    name: "athena-thermal-policy",
+    // HwBinder is a platform API, so keep the tiny bridge in system_ext.
+    system_ext_specific: true,
+    installable: true,
+    srcs: ["AthenaStockThermalPolicy.java"],
+    dex_preopt: { enabled: false },
+}

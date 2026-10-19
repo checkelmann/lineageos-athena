@@ -54,7 +54,49 @@ index10=-28.5dB and index25=0dB. Do not use high-volume tests for bring-up.
 `gpio-privacy-button` advertises Linux KEY_POWER (scan code116). Generic.kl maps
 that to Android POWER, and PowerManager records sleep reason power_button.
 There is also a separate gpio-privacy-state switch. Key remapping alone would not
-prove hardware microphone isolation; recording and switch behavior need testing.
+prove hardware microphone isolation. Ordinary MIC source returns zeros even
+unmuted: vendor ASP reports unsupported pipeline2. VOICE_RECOGNITION source does
+receive a varying nonzero signal unmuted. Its10s muted comparison returned100 small
+nonzero samples during startup (peak15), then9 seconds of exact zeros, with framework
+mute=true throughout. The startup transient remains unexplained; this is not proof
+of hardware isolation or intelligible recording. Tests save no audio. Amazon's
+[microphone control documentation](https://digprjsurvey.amazon.com/csad/help/node/GKA25FVYEV5PY8C9)
+explains that this button disables both microphones AND camera. Do not diagnose a
+no-frames camera failure with the red privacy light on as proof of a broken pipeline.
+
+## Camera follow-up (source ahead of packaged candidate)
+
+Restored matching OV13855 sensor tuning/scene libraries, camera metrics and portal
+interfaces, plus plugin dependencies libcamportal_wrap, libm4u, dewarp mapping/ROI
+and libdnn_fd. Missing tuning originally caused a null GetCameraDefaultPara callback;
+missing device3 dependencies then caused zero camera enumeration. Two front camera
+IDs now enumerate and preview is user-confirmed with privacy off. Photo/video
+capture and reboot persistence remain untested. Do not remove privacy checks.
+
+## Thermal follow-up (source ahead of packaged candidate)
+
+The stock thermal_module.ko was missing. Loading it restored the virtual sensor
+readings and registered OEM cooling devices. The generic stock legacy HAL read
+cached `/proc/mtktz/mtktscpu=-274000` even while sysfs returned real temperatures.
+`thermal.athena` reads CPU, skin and display virtual zones by name. It does not
+fabricate GPU/battery readings, change trips, or equate CPU cooling states with fan RPM.
+
+Merely starting Amazon's thermal HAL does NOT activate its policies: virtual-zone
+governors were null. Calling its existing1.1 setLocalePolicy method with the configured
+locale restored the OEM thermal.policy.conf profiles. Verified step_wise/enabled,
+display10trips starting43C, skin7trips starting47C, CPU6trips starting100C. No custom
+thresholds or fake-temperature testing were used. CPU legacy zone remains disabled;
+OEM control uses the virtual zones. Heat/throttling/shutdown behavior is NOT qualified.
+
+The athena-thermal-policy helper restores these original profiles via the stock
+HAL when its init service starts. Reboot persistence remains untested. The legacy
+Android1.0 thermal interface cannot provide modern throttling severity callbacks.
+
+Restarting a faulty thermal HAL while dumpsys runs exposed an A11 lock inversion:
+ThermalManagerService.dump holds mLock waiting for mHalLock; DeathRecipient holds
+mHalLock calling onTemperatureChanged waiting for mLock. A framework-only restart
+cleared the development-session deadlock. The new HAL then returned normal readings
+through dumpsys; the framework bug itself is not patched.
 
 ## Partition safety
 

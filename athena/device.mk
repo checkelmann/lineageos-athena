@@ -207,9 +207,24 @@ PRODUCT_PACKAGES += \
     libshim_keymaster
 
 # Thermal
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/prebuilt/camera/,$(TARGET_COPY_OUT_VENDOR)/lib)
+
 PRODUCT_PACKAGES += \
+    thermal.athena \
+    athena-thermal-policy \
     android.hardware.thermal@1.0-service \
     android.hardware.thermal@1.0-impl
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.thermal_mod.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.thermal_mod.rc \
+    $(LOCAL_PATH)/prebuilt/vendor/lib/modules/thermal_module.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/thermal_module.ko \
+    $(LOCAL_PATH)/prebuilt/vendor/lib/fireos.hardware.amazonthermal@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib/fireos.hardware.amazonthermal@1.1.so \
+    $(LOCAL_PATH)/prebuilt/vendor/lib/libLab126CameraMetrics.so:$(TARGET_COPY_OUT_VENDOR)/lib/libLab126CameraMetrics.so \
+    $(LOCAL_PATH)/prebuilt/vendor/lib/fireos.hardware.camportal@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/fireos.hardware.camportal@1.0.so \
+    $(LOCAL_PATH)/prebuilt/vendor/lib/vendor.mediatek.hardware.camera.ccap@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.mediatek.hardware.camera.ccap@1.0.so \
+    $(LOCAL_PATH)/prebuilt/vendor/lib/ov13855_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib/ov13855_mipi_raw_IdxMgr.so \
+    $(LOCAL_PATH)/prebuilt/vendor/lib/ov13855main2_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib/ov13855main2_mipi_raw_IdxMgr.so
 
 # Rootdir
 # Missing stock audio dependencies and the policy XML's A2DP include.

@@ -4,6 +4,10 @@ This candidate packages the previously live-applied boot, display/touch, Wi-Fi,
 Bluetooth, audio and volume fixes. A successful packaging audit is not an on-device
 TWRP installation or boot test. Use the release checksum to identify the exact ZIP.
 
+Pinned device-source snapshot: `1ac98e4e84c501a6a5bbc54ee039f755a490dd59`.
+Later camera/thermal fixes on the main branch and development device are NOT in
+this ZIP. Its historical limitations below must not be confused with current source.
+
 Artifact: `lineage-18.1-20261019-UNOFFICIAL-athena.zip` (approximately506MiB).
 
 SHA-256:
