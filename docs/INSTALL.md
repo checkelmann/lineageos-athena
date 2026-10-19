@@ -22,11 +22,11 @@ Echo model applies.
 For an already-prepared device, substitute the actual candidate filename/date:
 
 ```sh
-adb push lineage-18.1-20261018-UNOFFICIAL-athena.zip /sdcard/Download/
+adb push lineage-18.1-20261019-UNOFFICIAL-athena.zip /sdcard/Download/
 adb reboot bootloader
 fastboot reboot recovery
 adb wait-for-recovery
-adb shell twrp install /sdcard/Download/lineage-18.1-20261018-UNOFFICIAL-athena.zip
+adb shell twrp install /sdcard/Download/lineage-18.1-20261019-UNOFFICIAL-athena.zip
 ```
 
 Do not wipe or format userdata as part of these instructions. Preserving data is a

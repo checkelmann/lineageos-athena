@@ -2,14 +2,14 @@
 
 ## Packaging
 
-- [ ] Build succeeds; ZIP integrity passes.
-- [ ] SHA-256 recorded and checked after download.
-- [ ] No bundled adb_keys, no forced root-adbd, ADB authentication retained.
-- [ ] Patched ladder, shim and compatibility libraries are in the final images.
-- [ ] Correct landscape properties, Wi-Fi/Bluetooth modules and configs included.
-- [ ] Both A11 volume XMLs included; FireOS tables not reintroduced by duplicate rules.
-- [ ] Recovery updater is a no-op; installer does not write recovery or bootloaders.
-- [ ] Installer does not format userdata.
+- [x] Build succeeds; ZIP integrity passes.
+- [x] SHA-256 recorded and checked after download.
+- [x] No bundled adb_keys, no forced root-adbd, ADB authentication retained.
+- [x] Patched ladder, shim and compatibility libraries are in target files.
+- [x] Correct landscape properties, Wi-Fi/Bluetooth modules and configs included.
+- [x] Both A11 volume XMLs included; FireOS tables not reintroduced by duplicate rules.
+- [x] Recovery updater guard is a no-op; updater-script has no recovery/bootloader writes.
+- [x] Updater-script does not format userdata (review existing addon.d hooks separately).
 
 ## On-device acceptance — not yet performed on candidate ZIP
 

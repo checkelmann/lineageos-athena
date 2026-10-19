@@ -21,6 +21,7 @@ HAL failures. This is a bring-up build, not a secure daily-use release.
 
 ## Documentation
 
+- [2026-10-19 candidate and packaging audit](docs/CANDIDATE.md)
 - [Hardware status and known issues](docs/STATUS.md)
 - [Installation and recovery safety](docs/INSTALL.md)
 - [Build and source requirements](docs/BUILD.md)

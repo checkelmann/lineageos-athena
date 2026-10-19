@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "ota_sha256": "de9adc46f13fe6935a889c7aaa3e135d54bbe276ae66901e85c16df3168a0d3f",
+  "partition_targets": [
+    "/dev/block/platform/bootdevice/by-name/boot",
+    "/dev/block/platform/bootdevice/by-name/system",
+    "/dev/block/platform/bootdevice/by-name/vendor"
+  ],
+  "required_vendor_files": 20,
+  "on_device_install_tested": false
+}
