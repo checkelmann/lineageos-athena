@@ -51,6 +51,33 @@ index10=-28.5dB and index25=0dB. Do not use high-volume tests for bring-up.
 
 ## Privacy button
 
+### Processed microphone compatibility (source ahead of candidate)
+
+The stock primary HAL selects unimplemented ASP pipeline2 for standard MIC, while
+VOICE_RECOGNITION selects the working ASR pipeline0. `audio.primary.athena` loads the
+unchanged stock primary and translates processed built-in sources at open, stream
+parameter updates, and input-routing patch creation. The last path is essential:
+stock createAudioPatch writes source directly to its internal stream manager and
+bypasses the stream setter. Framework permissions and caller source remain intact;
+stock playback/mute operations are not replaced. External, telephony, private Amazon
+and UNPROCESSED sources are not translated. This is processed array audio, not a
+promise of independent raw microphone channels or low-latency performance.
+
+Use `ro.hardware.audio.primary=athena` to select the wrapper. Preserve the original
+`/vendor/lib/hw/audio.primary.mt8183.so` and its existing ABI dependency fixes. The
+wrapper must compile with HAL port layouts, not framework-only flags. Static checks
+enforce ARM32 audio_port_config size212/ext offset172 and create_audio_patch offset140.
+Muted format tests verify successful capture and actual pipeline0 selection, not
+privacy or speech quality. In particular, the shell MIC client can be silenced by
+the framework even with a real HAL signal and privacy off. The foreground test app
+successfully captured a changing MIC signal using normal RECORD_AUDIO permission;
+do not patch out framework privacy checks to make a shell diagnostic pass.
+Four native mock-based regression tests passed on the device: source mapping,
+stream parameter/close forwarding, untouched external capture and non-mutating
+routing translation. See STATUS.md for remaining acceptance gates.
+
+### Physical switch observations
+
 `gpio-privacy-button` advertises Linux KEY_POWER (scan code116). Generic.kl maps
 that to Android POWER, and PowerManager records sleep reason power_button.
 There is also a separate gpio-privacy-state switch. Key remapping alone would not

@@ -1,4 +1,5 @@
 # Audio
+ro.hardware.audio.primary=athena
 ro.vendor.mtk_audio_alac_support=1
 ro.vendor.mtk_audio_ape_support=1
 ro.vendor.mtk_audio_tuning_tool_ver=V2.2

@@ -14,7 +14,9 @@ validated. The freshly packaged installer must still be tested independently.
 **Privacy warning:** the microphone/privacy button also acts as a screen power
 button. Latest live tests show mute-state changes and a mostly silent muted capture,
 but hardware isolation has NOT been verified. Screen off is not proof of microphone
-privacy. Ordinary MIC capture remains broken; voice-recognition mode receives signal.
+privacy. Ordinary processed MIC capture now receives a signal in a foreground app;
+voice-satellite speech quality, echo cancellation and long-term listening still need
+validation. This newer compatibility fix is not in the existing candidate ZIP.
 
 Other limitations: SELinux permissive, old stock kernel/vendor security level,
 unencrypted `/data` configuration and userdebug/test-key build. Camera preview and

@@ -12,7 +12,7 @@ fresh-installer acceptance test.
 | Speakers | User-confirmed playback |
 | Volume | A11 curves restored; policy attenuation verified, final audible test pending |
 | Sensors | Service running; individual sensor accuracy untested |
-| Microphones | Voice-recognition source receives signal; ordinary MIC source fails in vendor DSP pipeline |
+| Microphones | Processed MIC16k mono works in normal foreground app;60s capture passed; privacy/satellite qualification ongoing |
 | Privacy button | Mute state and camera availability follow switch; also incorrectly sends POWER; muted capture has startup transient then zeros |
 | Camera | Latest source/live:2 devices; preview user-confirmed with privacy off; photo/video untested |
 | Thermal | Latest source/live:real CPU/skin readings and original OEM virtual-zone cooling profiles restored; no heat qualification |
@@ -27,8 +27,25 @@ gate. Existing userdata may conceal first-install problems.
 The latest thermal/camera source changes are NOT in the existing20261019 draft ZIP,
 which remains pinned to device-source snapshot1ac98e4. No new installer was flashed.
 
-Do not claim hardware microphone isolation, general microphone support, Bluetooth
+Do not claim hardware microphone isolation, complete voice-satellite qualification, Bluetooth
 audio, boot-persistent thermal management, clean install, or safe OTA updates.
 Voice-recognition capture was nonzero unmuted. Muted capture had100 low-amplitude
 nonzero samples in its first second, then9 seconds of exact zeros. This is not a
 hardware-isolation certification; intelligibility and sensitivity remain untested.
+
+The newer `audio.primary.athena` wrapper routes processed built-in MIC, DEFAULT,
+CAMCORDER, VOICE_COMMUNICATION and VOICE_PERFORMANCE requests through the stock ASR
+path, fixing the unsupported-pipeline selection. MIC16k mono10s and MIC48k mono/
+stereo, CAMCORDER44.1k stereo, VOICE_COMMUNICATION16k mono5s each opened successfully,
+selected pipeline0, and returned zeros with hardware privacy on. However, the
+command-line MIC client also received zeros with privacy OFF while HAL power
+history showed a real signal: framework client silencing makes those zero-only
+MIC tests insufficient to validate privacy. No recording protections were disabled.
+
+A normal foreground diagnostic app with RECORD_AUDIO granted then captured10s of
+varying MIC16k mono signal (peak935, RMS~6–65) using the wrapper. A second60s test
+completed all60 reads of16,000 samples with varying nonzero signal, no read errors
+or stalls. No audio files or network access. Foreground privacy comparison pending.
+Speech intelligibility, echo cancellation, sustained wake word listening, satellite
+app acceptance and reboot persistence remain unqualified. UNPROCESSED/raw capture
+is not repaired or claimed. Existing release ZIP still lacks this wrapper.

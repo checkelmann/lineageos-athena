@@ -85,6 +85,17 @@ Current device packages also build the native read-only `thermal.athena` HAL and
 uses platform-private HwBinder APIs to restore the original OEM locale policy;
 do not move it to a vendor Java module with restricted SDK APIs.
 
+`audio.primary.athena` is a source-built capture adapter around the original primary
+HAL. Keep both modules installed. Build `athena_capture_compat_test` for its native
+mock-based regression tests; these tests do not open the hardware or record audio.
+
+For normal app-level capture testing, run `bash scripts/mic-test-app/build.sh
+/path/to/android/source` on Linux (as one command). The bounded diagnostic APK uses
+the public AOSP test certificate, normal microphone permission, no network
+permission and saves no audio. It does not ship in the ROM. Test only with consent;
+use the on-screen button or explicitly announced `run_test` intent. Leaving the
+activity stops capture. Remove afterward with `adb uninstall org.lineageos.athena.mictest`.
+
 From the prepared Android source tree on Linux:
 
 ```sh

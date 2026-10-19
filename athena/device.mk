@@ -13,6 +13,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/vendor/lib/libhardware_legacy-athena.so:$(TARGET_COPY_OUT_VENDOR)/lib/libhardware_legacy-athena.so
 
 PRODUCT_PACKAGES += \
+    audio.primary.athena \
     audio.bluetooth.default \
     audio.usb.default \
     audio.r_submix.default
