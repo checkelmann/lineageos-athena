@@ -13,7 +13,7 @@ fresh-installer acceptance test.
 | Volume | A11 curves restored; policy attenuation verified, final audible test pending |
 | Sensors | Service running; individual sensor accuracy untested |
 | Microphones | Processed MIC16k mono works in normal foreground app;60s capture passed; privacy/satellite qualification ongoing |
-| Privacy button | Mute state and camera availability follow switch; also incorrectly sends POWER; muted capture has startup transient then zeros |
+| Privacy button | Additional software guard:160,000 zero MIC samples with privacy on; still incorrectly sends POWER; hardware isolation not certified |
 | Camera | Latest source/live:2 devices; preview user-confirmed with privacy off; photo/video untested |
 | Thermal | Latest source/live:real CPU/skin readings and original OEM virtual-zone cooling profiles restored; no heat qualification |
 | USB ADB | Development access works; key-free release authorization untested |
@@ -45,7 +45,17 @@ MIC tests insufficient to validate privacy. No recording protections were disabl
 A normal foreground diagnostic app with RECORD_AUDIO granted then captured10s of
 varying MIC16k mono signal (peak935, RMS~6–65) using the wrapper. A second60s test
 completed all60 reads of16,000 samples with varying nonzero signal, no read errors
-or stalls. No audio files or network access. Foreground privacy comparison pending.
+or stalls. No audio files or network access.
+
+Foreground privacy-on comparison initially returned97 tiny startup samples (peak14),
+then9 seconds of zeros. Added a separate software privacy guard: built-in reads
+check physical GPIO state before and after stock capture, zeroing output if either
+check is muted or the state cannot be read/validated. Repeating10s foreground MIC
+with privacy on then returned160,000 exact zeros, including startup. This verifies
+software muting, NOT hardware isolation, and does not erase audio already buffered
+by an app. Six native regression tests pass, including mute transitions, fail-closed
+state handling and unmuted data preservation. On-device unmuted capture with the
+new guard still needs rechecking; the successful60s test preceded the guard.
 Speech intelligibility, echo cancellation, sustained wake word listening, satellite
 app acceptance and reboot persistence remain unqualified. UNPROCESSED/raw capture
 is not repaired or claimed. Existing release ZIP still lacks this wrapper.

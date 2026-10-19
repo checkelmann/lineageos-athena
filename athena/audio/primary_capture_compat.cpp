@@ -11,10 +11,12 @@
 #include <cutils/str_parms.h>
 #include <dlfcn.h>
 #include <errno.h>
+#include <fcntl.h>
 #include <stddef.h>
 #include <log/log.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 #include <mutex>
 #include <unordered_map>
@@ -24,7 +26,7 @@ static_assert(sizeof(audio_port_config) == 212, "Stock ARM32 port ABI mismatch")
 static_assert(offsetof(audio_port_config, ext) == 172, "Stock port extension ABI mismatch");
 static_assert(offsetof(audio_hw_device, create_audio_patch) == 140, "Stock device ABI mismatch");
 
-// Keep all stock routing, DSP, playback and privacy functions. Only translate
+// Keep all stock routing, DSP, playback and privacy controls. Translate
 // standard processed microphone use cases to the working stock ASR capture path.
 // MIC selects unimplemented ASP pipeline2 in this firmware; ASR selects pipeline0.
 // Do not translate telephony, HOTWORD/private Amazon sources, or UNPROCESSED:
@@ -46,11 +48,55 @@ using OpenInput = decltype(audio_hw_device::open_input_stream);
 using CloseInput = decltype(audio_hw_device::close_input_stream);
 using SetParameters = decltype(audio_stream::set_parameters);
 using CreatePatch = decltype(audio_hw_device::create_audio_patch);
+using ReadInput = decltype(audio_stream_in::read);
+struct InputCallbacks {
+    SetParameters set_parameters;
+    ReadInput read;
+};
 static std::mutex lock;
 static OpenInput stock_open_input;
 static CloseInput stock_close_input;
 static CreatePatch stock_create_patch;
-static std::unordered_map<audio_stream*, SetParameters> setters;
+static std::unordered_map<audio_stream*, InputCallbacks> setters;
+
+// Additional software guard, not a claim of hardware isolation. The stock DSP
+// emits a small startup transient even when the physical switch is muted.
+// Fail closed if the physical state cannot be read or has an unexpected value.
+static bool read_privacy_mute_path(const char* path) {
+    const int fd = open(path, O_RDONLY | O_CLOEXEC);
+    if (fd < 0) return true;
+    char state[8] = {};
+    const ssize_t count = TEMP_FAILURE_RETRY(read(fd, state, sizeof(state)));
+    close(fd);
+    return !((count == 1 || (count == 2 && state[1] == '\n')) && state[0] == '0');
+}
+
+static bool read_privacy_mute() {
+    return read_privacy_mute_path("/sys/devices/platform/gpio-privacy/state");
+}
+
+static bool (*hardware_muted)() = read_privacy_mute;
+
+static ssize_t read_input(audio_stream_in* stream, void* buffer, size_t bytes) {
+    if (bytes && !buffer) return -EINVAL;
+    ReadInput original;
+    {
+        std::lock_guard<std::mutex> guard(lock);
+        auto it = setters.find(&stream->common);
+        if (it == setters.end()) return -EINVAL;
+        original = it->second.read;
+    }
+    if (!original) return -ENOSYS;
+    const bool muted_before = hardware_muted();
+    // Preserve the stock read's pacing/driver lifecycle even while muted.
+    const ssize_t result = original(stream, buffer, bytes);
+    const bool muted_after = hardware_muted();
+    if (result > 0) {
+        if (static_cast<size_t>(result) > bytes) return -EOVERFLOW;
+        if (muted_before || muted_after) memset(buffer, 0, static_cast<size_t>(result));
+    }
+    return result;
+}
 
 static int set_parameters(audio_stream* stream, const char* text) {
     SetParameters original;
@@ -58,8 +104,9 @@ static int set_parameters(audio_stream* stream, const char* text) {
         std::lock_guard<std::mutex> guard(lock);
         auto it = setters.find(stream);
         if (it == setters.end()) return -EINVAL;
-        original = it->second;
+        original = it->second.set_parameters;
     }
+    if (!original) return -ENOSYS;
     if (!text) return -EINVAL;
     str_parms* params = str_parms_create_str(text);
     if (!params) return -ENOMEM;
@@ -95,9 +142,10 @@ static int open_input(audio_hw_device* device, audio_io_handle_t handle,
     if (result == 0 && stream && *stream && builtin) {
         std::lock_guard<std::mutex> guard(lock);
         auto* common = &(*stream)->common;
-        if (common->set_parameters && common->set_parameters != set_parameters) {
-            setters[common] = common->set_parameters;
-            common->set_parameters = set_parameters;
+        if ((*stream)->read != read_input) {
+            setters[common] = {common->set_parameters, (*stream)->read};
+            if (common->set_parameters) common->set_parameters = set_parameters;
+            if ((*stream)->read) (*stream)->read = read_input;
         }
         ALOGI("Built-in capture source %d -> %d, rate=%u channels=0x%x flags=0x%x",
               source, mapped, config->sample_rate, config->channel_mask, flags);
@@ -110,7 +158,8 @@ static void close_input(audio_hw_device* device, audio_stream_in* stream) {
         std::lock_guard<std::mutex> guard(lock);
         auto it = setters.find(&stream->common);
         if (it != setters.end()) {
-            stream->common.set_parameters = it->second;
+            stream->common.set_parameters = it->second.set_parameters;
+            stream->read = it->second.read;
             setters.erase(it);
         }
     }

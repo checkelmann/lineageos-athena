@@ -12,8 +12,9 @@ playback were confirmed on that device. Bluetooth reaches ON; pairing is not yet
 validated. The freshly packaged installer must still be tested independently.
 
 **Privacy warning:** the microphone/privacy button also acts as a screen power
-button. Latest live tests show mute-state changes and a mostly silent muted capture,
-but hardware isolation has NOT been verified. Screen off is not proof of microphone
+button. A new software guard makes privacy-on built-in MIC capture entirely silent
+in the tested10s interval, but hardware isolation has NOT been verified.
+Screen off is not proof of microphone
 privacy. Ordinary processed MIC capture now receives a signal in a foreground app;
 voice-satellite speech quality, echo cancellation and long-term listening still need
 validation. This newer compatibility fix is not in the existing candidate ZIP.

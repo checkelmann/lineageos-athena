@@ -72,9 +72,10 @@ privacy or speech quality. In particular, the shell MIC client can be silenced b
 the framework even with a real HAL signal and privacy off. The foreground test app
 successfully captured a changing MIC signal using normal RECORD_AUDIO permission;
 do not patch out framework privacy checks to make a shell diagnostic pass.
-Four native mock-based regression tests passed on the device: source mapping,
+Six native mock-based regression tests passed on the device: source mapping,
 stream parameter/close forwarding, untouched external capture and non-mutating
-routing translation. See STATUS.md for remaining acceptance gates.
+routing translation, privacy transition/unmuted preservation and fail-closed
+privacy-state handling. See STATUS.md for remaining acceptance gates.
 
 ### Physical switch observations
 
@@ -90,6 +91,15 @@ of hardware isolation or intelligible recording. Tests save no audio. Amazon's
 [microphone control documentation](https://digprjsurvey.amazon.com/csad/help/node/GKA25FVYEV5PY8C9)
 explains that this button disables both microphones AND camera. Do not diagnose a
 no-frames camera failure with the red privacy light on as proof of a broken pipeline.
+
+The normal foreground MIC comparison also showed a small startup transient while
+muted (97 samples, peak14). The wrapper now adds an independent software read guard:
+read `/sys/devices/platform/gpio-privacy/state` before/after the original paced read;
+return zeros if either check is muted, unreadable or invalid. Only an explicit
+valid state0 permits samples through. Stock privacy controls are unchanged; external
+microphone reads are not intercepted. With this guard the foreground10s MIC test
+returned160,000 exact zeros from startup. This is software defense-in-depth, not
+certification of hardware isolation or deletion of app-held buffered audio.
 
 ## Camera follow-up (source ahead of packaged candidate)
 

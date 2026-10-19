@@ -8,6 +8,17 @@ audio_source_t observed_source;
 std::string observed_parameters;
 audio_port_config observed_sink;
 bool closed;
+bool mute_sequence[2];
+unsigned mute_call;
+
+bool fake_muted() {
+    return mute_sequence[(mute_call++) % 2];
+}
+
+ssize_t fake_read(audio_stream_in*, void* buffer, size_t bytes) {
+    memset(buffer, 0x55, bytes);
+    return bytes;
+}
 
 int fake_parameters(audio_stream*, const char* text) {
     observed_parameters = text;
@@ -19,12 +30,13 @@ int fake_open(audio_hw_device*, audio_io_handle_t, audio_devices_t, audio_config
     observed_source = source;
     input = {};
     input.common.set_parameters = fake_parameters;
+    input.read = fake_read;
     *stream = &input;
     return 0;
 }
 
 void fake_close(audio_hw_device*, audio_stream_in* stream) {
-    closed = stream->common.set_parameters == fake_parameters;
+    closed = stream->common.set_parameters == fake_parameters && stream->read == fake_read;
 }
 
 int fake_patch(audio_hw_device*, unsigned int, const audio_port_config*, unsigned int count,
@@ -40,6 +52,9 @@ class CaptureCompat : public testing::Test {
         stock_create_patch = fake_patch;
         setters.clear();
         closed = false;
+        mute_sequence[0] = mute_sequence[1] = false;
+        mute_call = 0;
+        hardware_muted = fake_muted;
     }
 };
 
@@ -82,6 +97,7 @@ TEST_F(CaptureCompat, ExternalMicrophoneIsUntouched) {
                             AUDIO_INPUT_FLAG_NONE, "", AUDIO_SOURCE_MIC));
     EXPECT_EQ(AUDIO_SOURCE_MIC, observed_source);
     EXPECT_EQ(&fake_parameters, stream->common.set_parameters);
+    EXPECT_EQ(&fake_read, stream->read);
     EXPECT_TRUE(setters.empty());
 }
 
@@ -106,5 +122,30 @@ TEST_F(CaptureCompat, RoutingTranslatesCopyWithoutChangingCallerOrOtherFields) {
     source.ext.device.type = AUDIO_DEVICE_IN_USB_DEVICE;
     EXPECT_EQ(23, create_patch(nullptr, 1, &source, 1, &sink, nullptr));
     EXPECT_EQ(AUDIO_SOURCE_CAMCORDER, observed_sink.ext.mix.usecase.source);
+}
+
+TEST_F(CaptureCompat, PrivacyGuardZerosMutedAndTransitionBuffersButPreservesUnmuted) {
+    audio_config config = {};
+    audio_stream_in* stream = nullptr;
+    ASSERT_EQ(0, open_input(nullptr, 1, AUDIO_DEVICE_IN_BUILTIN_MIC, &config, &stream,
+                            AUDIO_INPUT_FLAG_NONE, "", AUDIO_SOURCE_MIC));
+    for (auto pair : {std::pair<bool, bool>{false, false}, {true, true},
+                     {false, true}, {true, false}}) {
+        mute_sequence[0] = pair.first;
+        mute_sequence[1] = pair.second;
+        mute_call = 0;
+        unsigned char buffer[16];
+        memset(buffer, 0xee, sizeof(buffer));
+        ASSERT_EQ(16, stream->read(stream, buffer, sizeof(buffer)));
+        EXPECT_EQ(2u, mute_call);
+        for (auto value : buffer) EXPECT_EQ(pair.first || pair.second ? 0 : 0x55, value);
+    }
+    close_input(nullptr, stream);
+    EXPECT_TRUE(closed);
+}
+
+TEST_F(CaptureCompat, PrivacyStateFailureIsMuted) {
+    EXPECT_TRUE(read_privacy_mute_path("/dev/null"));
+    EXPECT_TRUE(read_privacy_mute_path("/athena-nonexistent-privacy-test-path"));
 }
 }  // namespace
