@@ -12,7 +12,7 @@ fresh-installer acceptance test.
 | Speakers | User-confirmed playback |
 | Volume | A11 curves restored; policy attenuation verified, final audible test pending |
 | Sensors | Service running; individual sensor accuracy untested |
-| Microphones | Processed MIC16k mono works in normal foreground app;60s capture passed; privacy/satellite qualification ongoing |
+| Microphones | Processed MIC16k mono works in normal foreground app;60s capture and guarded mute/unmute comparison passed; satellite qualification ongoing |
 | Privacy button | Additional software guard:160,000 zero MIC samples with privacy on; still incorrectly sends POWER; hardware isolation not certified |
 | Camera | Latest source/live:2 devices; preview user-confirmed with privacy off; photo/video untested |
 | Thermal | Latest source/live:real CPU/skin readings and original OEM virtual-zone cooling profiles restored; no heat qualification |
@@ -54,8 +54,11 @@ check is muted or the state cannot be read/validated. Repeating10s foreground MI
 with privacy on then returned160,000 exact zeros, including startup. This verifies
 software muting, NOT hardware isolation, and does not erase audio already buffered
 by an app. Six native regression tests pass, including mute transitions, fail-closed
-state handling and unmuted data preservation. On-device unmuted capture with the
-new guard still needs rechecking; the successful60s test preceded the guard.
+state handling and unmuted data preservation. With the guard installed, a further
+10s foreground MIC16k mono test with physical privacy off captured varying nonzero
+signal throughout (peak1976, RMS~10–168), confirming the guard permits capture when
+unmuted. All160,000 samples were read without errors; no audio was retained. The
+successful60s test preceded the guard; guarded long-duration testing remains open.
 Speech intelligibility, echo cancellation, sustained wake word listening, satellite
 app acceptance and reboot persistence remain unqualified. UNPROCESSED/raw capture
 is not repaired or claimed. Existing release ZIP still lacks this wrapper.
