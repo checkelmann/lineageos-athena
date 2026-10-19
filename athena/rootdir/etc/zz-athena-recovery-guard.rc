@@ -1,0 +1,6 @@
+# Preserve an already-installed TWRP. Never invoke the generated recovery flasher.
+service vendor_flash_recovery /system/bin/true
+    override
+    class main
+    disabled
+    oneshot

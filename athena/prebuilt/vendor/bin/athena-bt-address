@@ -1,0 +1,10 @@
+#!/system/bin/sh
+# Use this unit's factory identity without depending on the FireOS IDME HAL.
+address=$(tr -d '\000\r\n' < /proc/idme/bt_mac_addr)
+case "$address" in
+    *[!0-9A-Fa-f]*|'') exit 1 ;;
+esac
+[ "${#address}" -eq 12 ] || exit 1
+[ "$address" != 000000000000 ] || exit 1
+address=$(printf '%s' "$address" | sed 's/../&:/g;s/:$//')
+setprop persist.service.bdroid.bdaddr "$address"

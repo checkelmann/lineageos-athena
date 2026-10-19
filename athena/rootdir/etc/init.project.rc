@@ -1,0 +1,42 @@
+#
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Amazon Echo Show 8 2nd Gen (athena) project init
+
+on init
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+
+on boot
+    write /proc/sys/vm/min_free_kbytes 32768
+
+    # Privacy hardware mute key
+    chown system system /sys/devices/platform/gpio-keys/privacy_key
+
+on post-fs-data
+    # Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    # SPM
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+on init
+    # Silent OTA backlight control
+    chown system system /sys/class/leds/lcd-backlight/silent
+
+# CABC (Content Adaptive Brightness Control)
+on property:vendor.hwc.video_mode=1
+    write /sys/devices/platform/mtkfb@0/backlight_mode "mov"
+
+on property:vendor.hwc.video_mode=0
+    write /sys/devices/platform/mtkfb@0/backlight_mode "off"

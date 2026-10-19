@@ -1,0 +1,544 @@
+# Unpinned blobs from trona-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+
+# Amazon
+vendor/lib/libamazonlog.so
+
+# Audio - from athena-user 9 PS7312 1271 amz-p,release-keys
+vendor/bin/atcid|5d4d03c9c92ef1ac92c6da65ed845b2c50bc17f1
+vendor/bin/audiocmdservice_atci|f86d9c17573b836b57ddb242cb1b6eb898a3afae
+vendor/etc/init/atcid.rc|f28d6730c3cdd44d54509993f533d682425cd368
+vendor/etc/init/audiocmdservice_atci.rc|c2bda8827aa2dff8c502f2ecbfcf535b6517ca89
+vendor/lib/fireos.hardware.audio@2.0.so|007c7c99c914883307e766ba1d99c1d4abd75637
+vendor/lib/fireos.hardware.audio@4.0.so|9a91f625890125eeea825a3acc1171303ccd17ad
+vendor/lib/fireos.hardware.audiosignalprocessor@1.0.so|3da73fa94698f47b40a15c8a27cc4f23044b84aa
+vendor/lib/fireos.hardware.avsync@1.0.so|f2c2409db22005f0b733d752ec14e5113a064921
+vendor/lib/hw/android.hardware.audio.effect@4.0-impl.so|9420e137d8e993bb4fa6321a6fc6e7b801ffd432
+vendor/lib/hw/audio.primary.mt8183.so|5a4c5a8c424a3d4a8a943f5c136ec6c3876c4876|302d90a2535445878adf93162fa46d66253b5e9b
+vendor/lib/hw/audio.r_submix.mt8183.so|d86169ba79e27e7126e3e43ecb73c8eb08be8526
+vendor/lib/hw/audio.usb.mt8183.so|56c5dde0e03ce3037ffed735ac562ca85a2f64da
+vendor/lib/hw/fireos.hardware.audio@4.0-impl.so|598de997743ada9a97b99efc87f66a016c221391|f2dc4697da4622b312cc3be1552d851b7f610b04
+vendor/lib/hw/fireos.hardware.audiosignalprocessor@1.0-impl.so|bd81c3687204d9c8b362f6fdffd5daac4d16bc49
+vendor/lib/libacdk.so|97260182a4e6959a6937051a654728b6799b0393
+vendor/lib/libakl.so|a3759069013a81d7496b032e69ffb33cd32758aa
+vendor/lib/libasp.so|46f4b0420a4ef4c63b7c3f66af79bb8c800efab4
+vendor/lib/libaudio_param_parser-vnd.so|bb859ee970986876df42662b47fb914885c6a8e4
+vendor/lib/libaudiocompensationfilter_vendor.so|22fe414a71608762032b757930543808c1fbf830
+vendor/lib/libaudiocomponentengine_vendor.so|35f650ebed67b893e8a0d52e4359821de7609dee
+vendor/lib/libaudiocustparam_vendor.so|44193e79c2db73ef14e299a91731a61c47723a76
+vendor/lib/libaudiodcrflt_vendor.so|e2fb894c2cec555d2a1b67e7474be367380ed787
+vendor/lib/libaudiofmtconv.so|8bfe9a295bfbc35294a172cb687ca410dae8606e
+vendor/lib/libaudioprimarydevicehalifclient.so|e3c07f46bb947ecf540c64ac98c5026c24be97ca
+vendor/lib/libaudiosetting.so|85ad9fc3ffd527f7f209e94809928efaf0f69cf9
+vendor/lib/libaudiotoolkit_vendor.so|1a3489729dee9e663eb0cf6fad3d7d49daead360
+vendor/lib/libbessound_hd_mtk_vendor.so|e9068d7059b9961cb25dac88bb6f4bd978854dd3
+vendor/lib/libblisrc32_vendor.so|5006b7780b73c5e591ee819739a4f3e577bf1da8
+vendor/lib/libcvsd_mtk.so|493cd60f9b165c9cfafaebac37d317f9b15754d4
+vendor/lib/libmsbc_mtk.so|5da60667883f7e51d875dffe507e90befb57c665
+vendor/lib/libmtklimiter_vendor.so|a39d2dbc0ea41b6c5052cd7d3996186072552aa2
+vendor/lib/libmtkshifter_vendor.so|3f7fb87c5d10d45ce405b29ad65f06696169bec9
+vendor/lib/libspeech_enh_lib.so|b8c98a72fd2eb7ddeecabe79944b3a1a4f11d706
+vendor/lib/libspeechparser_vendor.so|ed700d1453a3e3091e4de9d59cfb946c370b3534
+vendor/lib/vendor.mediatek.hardware.atci@1.0.so|25973cf81a8716b8f5e7490abe754fa99d83820c
+
+# Audio Configs - from athena-user 9 PS7312 1271 amz-p,release-keys
+vendor/etc/audio-algorithms/AFE.cfg|0123b2a0da97f8204ebabf78391198ef27eae8f4
+vendor/etc/audio_param/AudioParamOptions.xml|395d22eebdd3862b7457ff897fca44baaf51473e
+vendor/etc/audio_param/BtInfo_AudioParam.xml|71ea6ac44afbdf26e416867b42959a8adf456d68
+vendor/etc/audio_param/BtInfo_ParamUnitDesc.xml|774de19d903f3ae57ca729468910a4fbc4dce6a5
+vendor/etc/audio_param/HpImpedance_AudioParam.xml|52954cf5228fee4125821a29ffe91b6d66f03680
+vendor/etc/audio_param/HpImpedance_ParamUnitDesc.xml|db505cd041c1fed9b01cacb403c59051eb0e57cf
+vendor/etc/audio_param/MicInfo_AudioParam.xml|3d1ede8bd1f11db41621108f63d78a3da30a8524
+vendor/etc/audio_param/MicInfo_ParamUnitDesc.xml|919387a9bf9def765e377fb2bbfdb1f78c9784ac
+vendor/etc/audio_param/PlaybackACF_AudioParam.xml|080c9852fa6c6dbd4a321964f9d5aa6408c9933e
+vendor/etc/audio_param/PlaybackACF_ParamUnitDesc.xml|c213c4383dc6455119e918d01162b13fac0a5d57
+vendor/etc/audio_param/PlaybackDRC_AudioParam.xml|6c89a9ed796f3dc59c1cde6ff14d758260753651
+vendor/etc/audio_param/PlaybackDRC_ParamUnitDesc.xml|d7633620bcad60f2e8bebf768806bfe512bfbe67
+vendor/etc/audio_param/PlaybackHCF_AudioParam.xml|14027382467e65f7403ac8a8ff3f20e090d2b598
+vendor/etc/audio_param/PlaybackHCF_ParamUnitDesc.xml|e81ad66ce074421054ae21aca7b6786c777aa3b4
+vendor/etc/audio_param/PlaybackVolAna_AudioParam.xml|be6f7773f465ac06684e5a0c7ec8dd675e6e9596
+vendor/etc/audio_param/PlaybackVolAna_ParamUnitDesc.xml|2c498554e9bf36eb93ff7add583c7c430d609166
+vendor/etc/audio_param/PlaybackVolDigi_AudioParam.xml|f7aa2c6c5d88ab421ebd6701648629cbbb7d8894
+vendor/etc/audio_param/PlaybackVolDigi_ParamUnitDesc.xml|8d6802520c2743a7e1e821cd34835e1147f5d3e9
+vendor/etc/audio_param/PlaybackVolUI_AudioParam.xml|24e4615dbc368eeaa62350ff0e4391297c5e9e6d
+vendor/etc/audio_param/PlaybackVolUI_ParamUnitDesc.xml|66219bf072564b9ce7e2bd9dead3a0f4e1960686
+vendor/etc/audio_param/Playback_AudioParam.xml|bae91c3c02e3e80af30709ba896e1f8b7bb98dd0
+vendor/etc/audio_param/Playback_ParamTreeView.xml|fa2d8415b1fd3c6df01101630c4e02a7cd5b1e83
+vendor/etc/audio_param/Playback_ParamUnitDesc.xml|6404606bf00d3326329e4a7b6a53a5b1c1c75d8c
+vendor/etc/audio_param/RecordDMNR_AudioParam.xml|2024a531bd577699c118bc9b500fdd67e7bc0726
+vendor/etc/audio_param/RecordDMNR_ParamUnitDesc.xml|796ae9b7e919f00f8bfd96ab6aaa575a7d4a620d
+vendor/etc/audio_param/RecordFIR_AudioParam.xml|a6cedf65a9451930cfc2927e9a223318dc400f9c
+vendor/etc/audio_param/RecordFIR_ParamUnitDesc.xml|00e8f429b33d0128fb38099450d63d9b568aaa83
+vendor/etc/audio_param/RecordUI_AudioParam.xml|6cfda4b82006c4d7ea0535ea2de9f461bdf48c0b
+vendor/etc/audio_param/RecordUI_ParamUnitDesc.xml|21ac33f0e22da76c59f371b2301456208e8704c9
+vendor/etc/audio_param/RecordVolUI_AudioParam.xml|7e11ae76c2c14c97b6d6f0660b377a547141a398
+vendor/etc/audio_param/RecordVolUI_ParamUnitDesc.xml|6964596d96dea3e3bcda942a46212206d5b68996
+vendor/etc/audio_param/RecordVol_AudioParam.xml|79ee08f63da23ec15113ca24cc35c80ac461044e
+vendor/etc/audio_param/RecordVol_ParamUnitDesc.xml|d0f2fadc94b6409abf179aeafb517396520e7a11
+vendor/etc/audio_param/Record_AudioParam.xml|c3ae426e3b77098d164ebe03b6d80a1dc3d00f80
+vendor/etc/audio_param/Record_ParamTreeView.xml|86494d784a8708e8d51d028c74326a27d6d2fe92
+vendor/etc/audio_param/Record_ParamUnitDesc.xml|a8003f1e139a155f6e6cf205463724d28c88458c
+vendor/etc/audio_param/RingbackVolUI_AudioParam.xml|9b736ece5394bde475e0a1a0a79b49caaea69ce3
+vendor/etc/audio_param/RingbackVolUI_ParamUnitDesc.xml|780845ea639429f05c424f4c2cece9a2c2865dee
+vendor/etc/audio_param/RingbackVol_AudioParam.xml|ce0fa5c5f4c568600b7ffb02a9e51231c0b33132
+vendor/etc/audio_param/RingbackVol_ParamUnitDesc.xml|21708bf4017ac1ae535686f8050f7776d5dcdde4
+vendor/etc/audio_param/SoundEnhancement_AudioParam.xml|b0e8e1d1bb99797776dae2b1a36930a0ee50bb9f
+vendor/etc/audio_param/SoundEnhancement_ParamUnitDesc.xml|01454682d270763adf70e50456be747d2461f187
+vendor/etc/audio_param/SpeechDMNR_AudioParam.xml|b29a3a9f90854644d6112788285435c73bd88839
+vendor/etc/audio_param/SpeechDMNR_ParamUnitDesc.xml|23307d4ea7f552e9483dee78872d973391c5b16a
+vendor/etc/audio_param/SpeechEchoRef_AudioParam.xml|1823760635f6f08652940bc0e06893c212b843e0
+vendor/etc/audio_param/SpeechEchoRef_ParamUnitDesc.xml|f4c19c678b8b2fcc017af267959f7b201d41ff53
+vendor/etc/audio_param/SpeechGeneral_AudioParam.xml|2c1eab8763339090490b1bf36e892890a38ae38c
+vendor/etc/audio_param/SpeechGeneral_ParamUnitDesc.xml|86cea2c73cb5028ab2e7d11ea46e5af1d1b39c61
+vendor/etc/audio_param/SpeechMagiClarity_AudioParam.xml|8768600a0361a2eea99ba0e391d47a33b9c238dc
+vendor/etc/audio_param/SpeechMagiClarity_ParamUnitDesc.xml|dea69062d7b0356cebe0d54f5dd66f0a57f243b3
+vendor/etc/audio_param/SpeechNetwork_AudioParam.xml|438d98ee79955751e376a4443ffa10822755c9f2
+vendor/etc/audio_param/SpeechNetwork_ParamUnitDesc.xml|9a88baea79caf7ac7aa1e6c15dc3c09163398d2b
+vendor/etc/audio_param/SpeechUI_AudioParam.xml|6449e0194e96568a9e28f570e8b8cf5e38f9a40b
+vendor/etc/audio_param/SpeechUI_ParamUnitDesc.xml|cdd4ac29506f5fcdfd3ff01a614276bb35b42cfb
+vendor/etc/audio_param/SpeechVolUI_AudioParam.xml|768d7675102e72c6d4db477feada3586dc692838
+vendor/etc/audio_param/SpeechVolUI_ParamUnitDesc.xml|94c55c6031ffb31dec2b26e3ec552183e6cc81d0
+vendor/etc/audio_param/SpeechVol_AudioParam.xml|d352b2eaee30d43a7acc8a7862ecaba79bffa14f
+vendor/etc/audio_param/SpeechVol_ParamUnitDesc.xml|821daf24c6b6066a0154efe6ac26fc11cbb8e2e4
+vendor/etc/audio_param/Speech_AudioParam.xml|56dc9acb4aff0a747daa1c34640a50e4eb220943
+vendor/etc/audio_param/Speech_ParamTreeView.xml|d11d4577263c12308f8a040e73600af5fc84f85e
+vendor/etc/audio_param/Speech_ParamUnitDesc.xml|612d07f0e5e3f963f44da14f2b547708fb66aea5
+vendor/etc/audio_param/USBCall_AudioParam.xml|b63d7c759a921f38bab60d742619b392857f8a7b
+vendor/etc/audio_param/USBCall_ParamUnitDesc.xml|938656e94e67803c37d551476fbc3de80a862f3c
+vendor/etc/audio_param/USBDevice_AudioParam.xml|4acaa1b82b2096c68d45180135b6d71700a93ec6
+vendor/etc/audio_param/USBDevice_ParamUnitDesc.xml|23254d081f6ae9ff4f04e1885f219f00ce69c48d
+vendor/etc/audio_param/VOW_AudioParam.xml|5c14ebf638599b502f8fc6175538a431314a6677
+vendor/etc/audio_param/VOW_ParamUnitDesc.xml|b381c88b664ffb27471efb6ce80ce9f613b927b1
+vendor/etc/audio_param/VoIPDMNR_AudioParam.xml|319e4fb7c248b3e25d9d505d7200c204283b4829
+vendor/etc/audio_param/VoIPDMNR_ParamUnitDesc.xml|297b87b5e3edb8f63ee6c78dc69168123afb9518
+vendor/etc/audio_param/VoIPGeneral_AudioParam.xml|b9b5ceb14a0c81d6d2e178e23e64f996d0ee98ee
+vendor/etc/audio_param/VoIPGeneral_ParamUnitDesc.xml|5812e1834df650a9b1eb6e970e1946bba4de2ec9
+vendor/etc/audio_param/VoIPUI_AudioParam.xml|1dfdd2c047b94666e11302192d6ee63c3cbf897b
+vendor/etc/audio_param/VoIPUI_ParamUnitDesc.xml|c05862c94b7c3107fee1b20e592ec2b54d4af43f
+vendor/etc/audio_param/VoIPVolUI_AudioParam.xml|8db4281667d0ffe69daf04e997abfbbef21cffd2
+vendor/etc/audio_param/VoIPVolUI_ParamUnitDesc.xml|7eb0bc0340e41511b2b136226f2026ea494d1873
+vendor/etc/audio_param/VoIPVol_AudioParam.xml|ea8c6ddb822e07114644dae3398b47706db7c3ee
+vendor/etc/audio_param/VoIPVol_ParamUnitDesc.xml|a09a22b5a98d186475aefcf9fd2e9052eb1868ad
+vendor/etc/audio_param/VoIP_AudioParam.xml|b20d6b1fb58f36a152382158ff251905d77c85d2
+vendor/etc/audio_param/VoIP_ParamTreeView.xml|4e94737ecdf474cb7739460c8c5216cc47197c15
+vendor/etc/audio_param/VoIP_ParamUnitDesc.xml|319d53db11c7ed2ac7ee6af2b5c0e5b466da9369
+vendor/etc/audio_param/VoIPv2DMNR_AudioParam.xml|86c4005089bafb54598763b55740d50ffe395d20
+vendor/etc/audio_param/VoIPv2DMNR_ParamUnitDesc.xml|43cb0471925590f32ea36b2e285e394381b4066d
+vendor/etc/audio_param/VoIPv2General_AudioParam.xml|7cea12ec16bd35a2f130f07b9fbea855728b19f8
+vendor/etc/audio_param/VoIPv2General_ParamUnitDesc.xml|42408003184d0a8c678d6bbb239696c124efba66
+vendor/etc/audio_param/VoIPv2UI_AudioParam.xml|c8fa15aa3108b8183cfde9cb77c65e56830adbcc
+vendor/etc/audio_param/VoIPv2UI_ParamUnitDesc.xml|b0729e08b8986751d79062084938f68643d5c73d
+vendor/etc/audio_param/VoIPv2_AudioParam.xml|e5336a5df07c4a77f7d6a73c5450219eecd52af8
+vendor/etc/audio_param/VoIPv2_ParamTreeView.xml|10c774fa5cfa81937566f6321497b4cabf7b0296
+vendor/etc/audio_param/VoIPv2_ParamUnitDesc.xml|29003923ea68cdcf8215274945b6ff7cb7155e40
+vendor/etc/audio_param/VolumeGainMapUL_AudioParam.xml|3833988b927a7931dd1a2f17d263ff4d612e9293
+vendor/etc/audio_param/VolumeGainMapUL_ParamUnitDesc.xml|c42589fbae940aff48e4b83e82a634a9d782d424
+vendor/etc/audio_param/VolumeGainMap_AudioParam.xml|cc3d9cf0e40b15229b305eac36ae83be5f0840f4
+vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml|503645534c82155849273e16488cde03cf0f2505
+vendor/etc/audio_param/Volume_AudioParam.xml|6c6675da59c4770671efde85c2cec42f2d5ced8a
+vendor/etc/audio_param/Volume_ParamUnitDesc.xml|8403fa7e6cef556eadd85e82044b602542fe3171
+
+# Bluetooth (Dependencies)
+vendor/lib/libbluetooth_mtk.so
+vendor/lib/libbt-vendor.so
+
+# Bluetooth (Service/Impl)
+vendor/bin/btmac
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-mediatek
+vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc
+vendor/etc/init/btmac.rc
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-mediatek.so
+
+# Camera (Dependencies) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/lib/lib3a.ae.core.so|da9468913d87511a66063662fe23a3898ffe000f
+vendor/lib/lib3a.ae.so|266a146e2d9f213588423b5b48fa66c987dcf374
+vendor/lib/lib3a.af.core.so|ea2d46eb4a439039f89751f4e57a2f1077cb9015
+vendor/lib/lib3a.af.so|000db1a1e3b193adf10d6f25b4859c98a093d2b0
+vendor/lib/lib3a.awb.core.so|2ed17d9650cd7dda725b53813dee44b387d33fea
+vendor/lib/lib3a.awb.so|fd67b665f87fd57ba39ad279e6299c0a309bf8a6
+vendor/lib/lib3a.ccudrv.so|d8548154d253dbe0e9bbd2e703ecb01befe228df
+vendor/lib/lib3a.ccuif.so|f54d5dd6b7b9d1bdabb931fd69ac14d80feca779
+vendor/lib/lib3a.flash.so|77b2cb3da0968490448e5da51012ba5ecbb8923c
+vendor/lib/lib3a.gma.so|6489b614a44cdc27822e3ebcc3acf1fff4b94628
+vendor/lib/lib3a.lce.so|2c88896bc096d5c5b32bff40dc0567327c08e9de
+vendor/lib/lib3a.log.so|414b824e75381a4c53fc488d8c1b6d2e7ee4c0d1
+vendor/lib/libSonyIMX230PdafLibrary.so|1a9217855af4376835ee91e56fdb047272324708
+vendor/lib/libSonyIMX230PdafLibraryWrapper.so|c4878fd7dddd3a138d39f821e9514ecce8d99b7c
+vendor/lib/libSonyIMX338PdafLibrary.so|b0ce9ca2bde1ad550e6392cbe19703433c6ecfa6
+vendor/lib/libSonyIMX338PdafLibraryWrapper.so|c50f0d21ed2b2c46496e09fd93be402731ba8390
+vendor/lib/libSonyIMX386PdafLibrary.so|b7ac7d537ba7564cb930aa2011e35ba0b76e7921
+vendor/lib/libSonyIMX386PdafLibraryWrapper.so|a558a9479113b51e7354ef9634bfd20df2c24401
+vendor/lib/libSonyIMX519PdafLibrary.so|08e53554bea2642f86d4f40ca33b9c9aeb8127b3
+vendor/lib/libSonyIMX519PdafLibraryWrapper.so|79f399da215434f57315e765cda661e0c9b460b8
+vendor/lib/libcam.feature_utils.so|b0984751e7517045c08cb5d1f439b36108cd6f91
+vendor/lib/libcam.hal3a.cctsvr.so|6a93fe7c0acd27f483185c74a2888c162cd59d98
+vendor/lib/libcam.hal3a.log.so|006b9a5148e32eb9f44ffeb7c1e96bce6def69bd
+vendor/lib/libcam.hal3a.v3.dng.so|67b2dcbf110e05937fe9628f793a6fcf3cc28e81
+vendor/lib/libcam.hal3a.v3.lscMgr.so|73be3361dcab827981a585c4f2941e8db5a6db69
+vendor/lib/libcam.hal3a.v3.lsctbl.50.so|208ebdf6ce9710c5205c0d2a47943944394199f2
+vendor/lib/libcam.hal3a.v3.nvram.50.so|7c2db98885a8190f62d21ede01a59e595218738c
+vendor/lib/libcam.hal3a.v3.so|4d89ae49e42ac183dabc3838a92e0c851bcb9bd9
+vendor/lib/libcam.halisp.so|98bbdbdf456fc5f5a68f1ce3c55450ac57ce7a17
+vendor/lib/libcam.halsensor.so|ae98257dfd64066747dfb35345ec1439208d915c|9918ad7325d1cd3646928cdde8cc80330330890a
+vendor/lib/libcam.iopipe.so|04945f0e1e0b307b328d59f5d1b81641065bd47c
+vendor/lib/libcam.lcs.so|87f492d4d58c6bbdde1e75b03179d14b0bc635e1
+vendor/lib/libcam.pdtblgen.so|5492b99f4ec85f30471e931c046a29c10a1abbe6
+vendor/lib/libcam.utils.sensorprovider.so|7e1c65ca7ddb522c1b51d0bd3ae8d9c78a4378a2
+vendor/lib/libcam.vhdr.so|ef9f7db6774efca6fa6de3cd6e4e4df252f2632c
+vendor/lib/libcam3a_imem.so|032661cdf9ddc3593873ad99f77912c4382d2065
+vendor/lib/libcamalgo.asd.so|f979901c31fcb20a60eae8efb7c382373f0db697
+vendor/lib/libcamalgo.dngop.so|f721c5713a41df50ec2f4d09c446be3aab1cae43
+vendor/lib/libcamalgo.eis.so|42ddc087608e42b3680d9359d297a88b0d1c4d07
+vendor/lib/libcamalgo.fdft.so|3ba7e12ac12e6e9d17eee164a08f1f22e11a8070
+vendor/lib/libcamalgo.flicker.so|98cec0174a2423af6ab5358fa7fd4acabf816093
+vendor/lib/libcamalgo.fsc.so|b0068cf0ab146ce8a88f6d69a74c8b7a75fcf904
+vendor/lib/libcamalgo.hdr.so|26955538f49c720a03e6863f178ebe5c80ef6b59
+vendor/lib/libcamalgo.ispfeature.so|e2569e00beea444cd193d9308bf2a070a0729f3b
+vendor/lib/libcamalgo.lsc.so|a8c656d87e4984814ecff25ba01fba83aa31a9c8
+vendor/lib/libcamalgo.mfnr.so|6166ceca2a103ba92caa62b1236208b2c664a2d4
+vendor/lib/libcamalgo.utility.so|4c0c68be7e1ec9bc0d77c924f087fdb0fbc83697
+vendor/lib/libcamalgo.vpunr.so|cf962acc87350fb646a968a25f3238e541d5e912
+vendor/lib/libcamalgo.warp.so|acaf7c92f70e83e7d575ffe2fc7fab3963070c4f
+vendor/lib/libcamdrv_imem.so|bf602cd40ed3e2b2988d35496dc84826bc712907
+vendor/lib/libcamdrv_isp.so|731cd589164d747b1fa6c299b2eab4eb70131ef8
+vendor/lib/libcamdrv_tuning_mgr.so|4df98da68588f707eb1ecd3bacd573d4db249e53
+vendor/lib/libcamdrv_twin.so|2edcc790106843dad5510d0672da4b2c0bd7970c
+vendor/lib/libcameracustom.eis.so|58f0e7d6ee9cceaaf2877d064498550006804181
+vendor/lib/libcameracustom.so|f34be89470ad0f0849bf681651c5046753f1e80e
+vendor/lib/libdip_drv.so|07d5192493e046462a93c277f92cabaf795b3216
+vendor/lib/libdip_imem.so|73bd345de06c898e0b3dd115524748e4098fd489
+vendor/lib/libdip_postproc.so|6542d7e5f457192da0a86c07b3aa45d4d72a18d6
+vendor/lib/libeffecthal.base.so|de6a5ef49b77a90acecccfb323d2dcb8636ed0a2
+vendor/lib/libfeature.face.so|3102b4176c0b327de2ac5a351643eed566eeaff0
+vendor/lib/libfeature.stereo.provider.so|6971f4d5d7d6d1bb9cd04fe44d3fa1bed5e6331a
+vendor/lib/libfeature_3dnr.so|b070f52ea8263bec541db23eb0c2b65142b94ac9
+vendor/lib/libfeature_eis.so|dbef44a2cce6d394b79634e1880f98943921717d
+vendor/lib/libfeature_fsc.so|5862792f2630f7661275c581bfacb44ffd470020
+vendor/lib/libfeature_lmv.so|337bf759d0001a3f5ecffd4fa889840079a3eb91
+vendor/lib/libfeature_rss.so|592d0e929f0cac454381edd61dd062074265e9e7
+vendor/lib/libhdrproc.so|c891b5ff5d220127c7af0b66eceb60086990630a
+vendor/lib/libimageio.so|dc5f567183d8c67a94001483a222b4ae7b274fe3
+vendor/lib/libimageio_plat_drv.so|3fa514e289f8021c7f8ef2f0c075f74a7d3f8be3
+vendor/lib/libimageio_plat_pipe.so|b18d9ba0bcb765078a744332933c9bbc23abd8b7
+vendor/lib/libmfllcore.so|afd45c12f332dcc71a2b1fbb8dd8837aa8dfe11b
+vendor/lib/libmtkcam.featurepipe.capture.so|3e2456168e6f3ef9b95a522f0c848ab22c777790
+vendor/lib/libmtkcam.featurepipe.streaming.so|d9f0c24e7e791ec924ea1a98a221886ea1c3b608
+vendor/lib/libmtkcam.featurepipe.vsdof_util.so|8d0b89b27eee34641cac35c3a43772cf7d8b71fc
+vendor/lib/libmtkcam.logicalmodule.so|a814ded12d0f47771243a349372b7e675e5a4a4e
+vendor/lib/libmtkcam_3rdparty.core.so|83c794cf22761c98547bd2acaab2d343621f3913
+vendor/lib/libmtkcam_3rdparty.customer.so|e8fa34b5bea9c22397ff00669a8afcb250fc1e71
+vendor/lib/libmtkcam_3rdparty.mtk.so|fcbeb3cfe0a01ee96c82b247dac952874b33f486
+vendor/lib/libmtkcam_3rdparty.so|8c86a0bcdb7697267abb7a284166c1dd982d4cb0
+vendor/lib/libmtkcam_debugutils.so|93392e9b7a6a1a477801ec00c2bf258fc115e41d
+vendor/lib/libmtkcam_device3.so|fa52e2e04a64802142ccbf95e9f6514ed4a18d76
+vendor/lib/libmtkcam_device3_app.so|5601d5393a5ef3da83b7fdc7c0ab6e08525e90d3
+vendor/lib/libmtkcam_exif.so|cd4d63e1488a024b342017da4f2dd52af049e7fc
+vendor/lib/libmtkcam_fdvt.so|2ed23ee181edfe6532a0f968b4d305229b5123d5
+vendor/lib/libmtkcam_fwkutils.so|58d8c9adeb2b2cdc9e10f4cf1f019b610822f34e
+vendor/lib/libmtkcam_grallocutils.so|014fa66b3361fe652a9d19ab2b8fea742095b719
+vendor/lib/libmtkcam_hwnode.so|4d04e77730f64c455e90db48061ee21fe5dea2a7
+vendor/lib/libmtkcam_hwutils.so|7acf59e87535c8216f28121a622d78427ecdec91
+vendor/lib/libmtkcam_imem.so|1fb70bb47e3f03be675239f27d58bc682c8b5bf5
+vendor/lib/libmtkcam_imgbuf.so|bb94d60c76bb2efd88d23c1ef858e0cbbad9e282
+vendor/lib/libmtkcam_mapping_mgr.so|cd39796f866f4425b59a05d884716a6a79c84412
+vendor/lib/libmtkcam_metadata.so|2f2ae1edff56fa378bccfc1a2759e9d505ddb06b
+vendor/lib/libmtkcam_metastore.so|b022e19470bb79d84855d10180de1eee6ae7b8c0
+vendor/lib/libmtkcam_mfb.so|f065f9e3fc448d86f6b6222cb2eabac3c53c6378
+vendor/lib/libmtkcam_modulefactory_aaa.so|36a4e6e87f11759e14997e326349ae9428e0e26f
+vendor/lib/libmtkcam_modulefactory_custom.so|3a73b8655e8d8d9582f8c969c7ec17bf485a76f3
+vendor/lib/libmtkcam_modulefactory_drv.so|ab4e22d1f2d983b41d604dedf6d802f6e0789fd3
+vendor/lib/libmtkcam_modulefactory_feature.so|ba4a2a04de2d16da6ba87de711a6d400c7954ac8
+vendor/lib/libmtkcam_modulefactory_utils.so|eaa20abbe94b844eec1d6188a12638b740c28e58
+vendor/lib/libmtkcam_modulehelper.so|3a4272cc144e7b870850125e25ebad3d07eb56ba
+vendor/lib/libmtkcam_pipeline.so|95c7caa6a1a384f83c0558cc044ddf4f74227074
+vendor/lib/libmtkcam_pipelinemodel.so|2f1018e92bceca4cab73627e2417a5e3324febe1
+vendor/lib/libmtkcam_pipelinemodel_adapter.so|5a4bfab042de10a37caf5fb7d086bff775a3e178
+vendor/lib/libmtkcam_pipelinemodel_capture.so|6f769adec11be7ed9cbd813d8529c4f1c1ddd726
+vendor/lib/libmtkcam_pipelinemodel_hbc.so|3c3a4679ceb916aa2e71e375b31caf1aa465e321
+vendor/lib/libmtkcam_pipelinemodel_session.so|3c9eccde48361ab4b1becc72e96bef4cfd971e7d
+vendor/lib/libmtkcam_pipelinemodel_utils.so|27cda382cf4b0ad027aec9d73ff2f266bc6d4f34
+vendor/lib/libmtkcam_pipelinemodel_zsl.so|ba82292b03011922125fb23dd38e73a7408c4048
+vendor/lib/libmtkcam_pipelinepolicy.so|4385ab1d240ae23bf936a8b0a541c1ca67acd0ac
+vendor/lib/libmtkcam_rsc.so|ca52838125cc9ff1383997172e40f77c84f1f615
+vendor/lib/libmtkcam_stdutils.so|df35fc69263d4217d267f6444a8cfb97b5c5d6d2|a73ee6729e21818081a68f38f4610df2abc01723
+vendor/lib/libmtkcam_streamutils.so|78bb2164b91e4c16dd86eea1cc350f417e95cae2
+vendor/lib/libmtkcam_sysutils.so|ead8d4bfdb8b6725f867239c9c3a21167baef5d5
+vendor/lib/libmtkcam_tsf.so|2896e184fea2093662deab4e0887f4e77d4cce77
+vendor/lib/libmtkcam_tuning_utils.so|702582139d76dc3bf0d123dd76285f5a0029f07d
+vendor/lib/libmtkcutils.so|2cf9be489c778742dcd68f53275b01d7f0263f41
+
+# Camera (Interfaces) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/lib/vendor.mediatek.hardware.camera.ccap@1.0.so|87f654ee87cf887ea4b0d05da8a9b8b0f1a1685e
+vendor/lib/vendor.mediatek.hardware.camera.lomoeffect@1.0.so|d0be7ab7f408e39ec5e88e67432dccd134a8d118
+
+# Camera (Service/Impl) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/bin/hw/camerahalserver|fe88a649fe75d03bc7791e0e7b895253ccd29359|c4ac4f72fc41565b8762764f6b63706fdf43f2e5
+vendor/bin/mtkcam-debug|714c8c568cb8bbaa88a5a933fe52c1a0b4db5be2
+vendor/etc/init/camerahalserver.rc|88ddae216909ebfe05b56e504ff8f05e45542dba
+vendor/lib/hw/android.hardware.camera.provider@2.4-impl-mediatek.so|7b2d4a348f09d1d1202b22081b56352456180375
+
+# CCCI - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/bin/ccci_fsd|07413058bbd9e2c0c80e0bbf9579f11f0cba528f
+vendor/bin/ccci_rpcd|d1745d52525326795b650d8274f4843b41ebea97
+vendor/etc/init/init.cccifsd.rc|ada27f6450c2d3fb6e178a62ec1a6eada64b811f
+vendor/etc/init/init.cccirpcd.rc|007d95a9cfe9f8e596b2e25690e12a82d0f8753f
+vendor/lib/libccci_util.so|5ed55752e09c53ec6d5dd3189e1619442316c165
+vendor/lib/libstorage_otp.so|715766171facd7da0f3182ce49b1a292081296d9
+
+# DHA (Binaries) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/bin/amzn_dha_hmac|3780af07cba3a10c8ee954faad359c7f65f81ea2
+vendor/bin/amzn_dha_tool|e0b7fda430cd2f5361ceafb2e80d2d9a19cbfe50
+vendor/bin/amzn_drmprov_check|db013043470e5c9a186a8db376eb153fc14d9d38
+vendor/bin/amzn_drmprov_tool|3667e1fb377149a844174de85924d80f0adac012
+vendor/etc/init/amzn_drmprov_check.rc|da1fbbda94871a18e1e51f921f38a4049b93e0a8
+
+# DHA (HW Module)
+vendor/lib/hw/amzn_dha.mt8183.so|bd436e706360ee6536bb697f9b9a25e09c8a7a5d|8a0c408d6eabf54cd5b1db0bb0062f6e57387beb
+
+# DHA (Interfaces)
+vendor/lib/fireos.hardware.fireosdha@2.0.so
+
+# DHA (Service/Impl)
+vendor/bin/hw/fireos.hardware.fireosdha@2.0-service
+vendor/etc/init/fireos.hardware.fireosdha@2.0-service.rc
+vendor/lib/hw/fireos.hardware.fireosdha@2.0-impl.so
+
+# DRM (Binaries) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/bin/pr_device_cert_id|049ae3daed4212d6bfed70161b23c575ab883c8c
+vendor/etc/init/pr_device_cert_id.rc|df5b6b071a80dbfb370062f6de181662541dbe3e
+
+# DRM (Crypto) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/lib/liboemcrypto.so|08f369ed67141f05a998d78da205b4ec804500f8
+vendor/lib/libplayready.so|6483ecb1b43fa9521b92cc20150c4a2939f896ae
+vendor/lib/libwvhidl.so|0f216d062bdc0b2ab2118b93eed67cfcd2b6a51e|d6b7fcd669049b39f9b0fc2eb5497260938658a4
+vendor/lib/mediadrm/libplayreadydrmplugin.so|33d94c6515f24fde006b1103f7a1e8ad0fb06975
+
+# DRM (Dependencies)
+vendor/lib/lib_uree_mtk_modular_drm.so
+vendor/lib/lib_uree_mtk_video_secure_al.so
+vendor/lib/libtz_uree.so
+vendor/lib/liburee_meta_drmkeyinstall_v2.so
+
+# DRM (Service/Impl) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine|b3bc73f366adedc8bfb3204548da1e3def9385de
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|5a01d337c1d375ee24a6c8992ba91f54afb7637e
+
+# Firmware - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/bin/lib3a.ccu.ddr|65c066d8802a784449935367f76835a071b85faa
+vendor/bin/lib3a.ccu.dm|67a12942616ff5baced4770430c3cba6457ec121
+vendor/bin/lib3a.ccu.pm|06b94ad55a6222badb7c45ed9d63a9a789140645
+vendor/firmware/SMicBin_rt5518_mode11.dat|4ea33decec9791b1d2d6ea01abdd3e1f368e2597
+vendor/firmware/SMicBin_rt5518_mode12.dat|14d57f8a26cf841e6e71bd6f070b810c9e7a5dea
+vendor/firmware/SMicBin_rt5518_mode13.dat|b7afb3567f1ad1e62f17b69511b7f7bba1dd1a48
+vendor/firmware/SMicBin_rt5518_mode14.dat|4eacbf1f6ff4609d83bc06729f53db32029050e3
+vendor/firmware/SMicBin_rt5518_mode21.dat|999b87c4cc645b4dea34eaf290c277c98f69fbed
+vendor/firmware/SMicBin_rt5518_mode22.dat|d4d16b85b6cd187eda5da036615c06d576b7026e
+vendor/firmware/SMicBin_rt5518_mode23.dat|7a4f6d2721f09ed015fc6c61cba7d39256fc42a2
+vendor/firmware/SMicBin_rt5518_mode24.dat|f05dccd37d120817afd6f6df8fc3245aa312fdbc
+vendor/firmware/goodix_cfg_TG_KDX.cfg|372cb7dbe5ceba78433b279125b3168ade215692
+vendor/firmware/goodix_firmware.bin|e4dfbd85f8207df0642601da82ab4f096c16e246
+
+# Gatekeeper
+vendor/lib/hw/gatekeeper.mt8183.so
+vendor/lib/hw/libSoftGatekeeper.so
+
+# Graphics (EGL)
+vendor/lib/egl/egl.cfg
+vendor/lib/egl/libGLES_mali.so
+vendor/lib/libOpenCL.so
+vendor/lib/libbwc.so
+vendor/lib/libdpframework.so
+vendor/lib/libged.so
+vendor/lib/libgpu_aux.so
+vendor/lib/libgralloc_extra.so
+vendor/lib/libion_mtk.so
+vendor/lib/libion_ulit.so
+vendor/lib/libpixelflinger.so
+
+# Graphics (HW Modules)
+vendor/lib/hw/gralloc.mt8183.so
+vendor/lib/hw/memtrack.mt8183.so
+
+# Health - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/bin/fuelgauged_nvram|7c22b90b85b5a7ace58ed01da0fa0eac45c21f37
+vendor/bin/fuelgauged|3202a2096f92ac8192f6d02a63b3158b47dbe714
+vendor/etc/init/fuelgauged_init.rc|059d27cf33a84a559d45597be9f1f700dbb0d947
+vendor/etc/init/fuelgauged_nvram_init.rc|dc3ce4fc473a1136b311e4bc8d793959a426a7bb
+vendor/lib/libfgauge_gm30.so|22a0655156e46610d824febd9d4b5bf00fd3cdf2
+
+# IDME (Binaries)
+vendor/bin/idme
+
+# IDME (Interfaces)
+vendor/lib/fireos.hardware.idme@1.0.so
+
+# IDME (Service/Impl)
+vendor/lib/hw/fireos.hardware.idme@1.0-impl.so
+
+# Keymaster (HW Module)
+vendor/lib/hw/keystore.mt8183.so
+
+# Keymaster (Interfaces)
+vendor/lib/vendor.mediatek.hardware.keymanage@1.0.so
+
+# Keymaster (Service/Impl)
+vendor/bin/hw/vendor.mediatek.hardware.keymanage@1.0-service
+vendor/etc/init/vendor.mediatek.hardware.keymanage@1.0-service.rc
+vendor/lib/hw/vendor.mediatek.hardware.keymanage@1.0-impl.so
+
+# KISD
+vendor/bin/kisd
+vendor/etc/init/kisd.rc
+
+# Ladder - from ares-user 13 TP1A.220624.014 V14.0.2.0.TKJCNXM release-keys
+vendor/lib/libladder.so|ab3c533149a4e7706e9027b1a0fe72fc12bfdf24
+
+# Media (Binaries)
+vendor/bin/jpegtool
+
+# Media (Codecs)
+vendor/etc/mtk_omx_core.cfg
+vendor/lib/libHEVCdec_sa.ca7.android.so
+vendor/lib/libJpgDecPipe.so
+vendor/lib/libJpgEncPipe.so
+vendor/lib/libMtkOmxCore.so
+vendor/lib/libMtkOmxVdecEx.so
+vendor/lib/libMtkOmxVenc.so
+vendor/lib/libSwJpgCodec.so
+vendor/lib/libh264dec_customize.so
+vendor/lib/libh264dec_sa.ca7.so
+vendor/lib/libh264dec_sd.ca7.so
+vendor/lib/libh264dec_se.ca7.so
+vendor/lib/libjpeg-alpha_vendor.so
+vendor/lib/libmhalImageCodec.so
+vendor/lib/libmp4enc_sa.ca7.so
+vendor/lib/libmp4enc_xa.ca7.so
+vendor/lib/libvc1dec_sa.ca7.so
+vendor/lib/libvp8dec_sa.ca7.so
+vendor/lib/libvp8enc_sa.ca7.so
+vendor/lib/libvp9dec_sa.ca7.so
+
+# Media (Dependencies)
+vendor/lib/libmtk_drvb.so
+vendor/lib/libthha.so
+
+# Media (Stagefright)
+vendor/lib/libstagefrighthw.so
+
+# Media (VPU)
+vendor/lib/libvcodec_oal.so
+vendor/lib/libvcodec_utility.so
+vendor/lib/libvcodecdrv.so
+
+# Media (VPU) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/lib/libvpu.so|244819e69588079eead10647f9174a8b56318883
+
+# NVRAM (Binaries) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/bin/nvram_daemon|4cf13037bba14332401aca95adff8511cfc807c4
+vendor/etc/init/nvram_daemon.rc|c55547dfa6656c7d89788036331f074c52701ab1
+
+# NVRAM (Dependencies)
+vendor/lib/libcustom_nvram.so
+vendor/lib/libfile_op.so
+vendor/lib/libnvram.so
+vendor/lib/libnvram_daemon_callback.so
+vendor/lib/libnvram_platform.so
+
+# NVRAM (Interfaces)
+
+# NVRAM (Interfaces) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/lib/vendor.mediatek.hardware.nvram@1.0.so|0da32312c34ea51621ed8691dd71c46de4af02c5
+vendor/lib/vendor.mediatek.hardware.nvram@1.1.so|80e812bae4c6409fceb258eb83784968fe5a4c8f
+
+# Perf
+vendor/bin/hw/vendor.mediatek.hardware.power@2.0-service
+vendor/etc/init/bootperf.rc
+vendor/etc/init/vendor.mediatek.hardware.power@2.0-init.rc
+vendor/etc/init/vendor.mediatek.hardware.power@2.0-service.rc
+vendor/etc/power_whitelist_cfg.xml
+vendor/etc/powercontable.cfg
+vendor/etc/powerscntbl.cfg
+vendor/lib/hw/power.mt8183.so
+vendor/lib/hw/vendor.mediatek.hardware.power@2.0-impl.so
+vendor/lib/libmtcloader.so
+vendor/lib/libperfctl_vendor.so
+vendor/lib/libpowerhal.so
+vendor/lib/libpowerhalwrap_vendor.so
+
+# Perf - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/lib/vendor.mediatek.hardware.power@1.1.so|6bd29287a4b9978c06962a052a53b59f4c46fd80
+vendor/lib/vendor.mediatek.hardware.power@2.0.so|740fbd46f01ead01029ed43447145359507d7b33
+
+# Picture Quality (Dependencies)
+vendor/lib/libpq_cust_base.so
+vendor/lib/libpq_prot.so
+vendor/lib/librgbwlightsensor.so
+
+# Picture Quality (Interfaces)
+vendor/lib/vendor.mediatek.hardware.pq@2.0.so
+vendor/lib/vendor.mediatek.hardware.pq@2.1.so
+vendor/lib/vendor.mediatek.hardware.pq@2.2.so
+
+# Picture Quality (Service/Impl)
+vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
+vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
+vendor/lib/hw/vendor.mediatek.hardware.pq@2.2-impl.so
+
+# RPMB - from athena-user 9 PS7312 1271 amz-p,release-keys
+vendor/bin/rpmb_svc|0c84036cc312786c1b4cb7b26ce56c4ed33fff94
+vendor/etc/init/rpmb_svc.rc|80c283b558ea8c04edcb70313a63f33d86d81208
+
+# Sensors (Dependencies) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+
+# Sensors (HW Module) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+
+# Sensors (Service/Impl) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+
+# Thermal (Binaries) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/bin/thermalloadalgod|e8a488fdf9ed968fe38ac09230b45be484160526
+vendor/bin/thermal|ddb4a4a4c4cd9285770b4587517e70490f9b16e3
+vendor/etc/init/init.thermal.rc|cb4f259f720f2481a3e9b4d68d7c72193c554faa
+vendor/etc/init/init.thermalloadalgod.rc|d70cde3b8a1a1607f7a99475b3357a894907458f
+
+# Thermal (Configs) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/etc/.tp/.ht120.mtc|d39126f3269a5f3b05a131d7d7e622aeb6dc7e32
+vendor/etc/.tp/.thermal_policy_00|e2c066ccca622005334999bdcc32259c98fcced0
+vendor/etc/.tp/.thermal_policy_03|0d1e104ce2132796658c0a546fb1b5cce6eef43d
+vendor/etc/.tp/.thermal_policy_05|f34535a2e3cc8c461e0531b21be83b33173ba9a7
+vendor/etc/.tp/.thermal_policy_08|556258275b20aaeafdb62e7e5391acc40358d5f3
+vendor/etc/.tp/thermal.off.conf|a8a4f340f2f19e592c31a34d72582e38c8ea1b2d
+vendor/etc/.tp/thermal.policy.conf|4be70ac835275368cf5c31061cb3d172d89d72d8
+vendor/etc/fstb.cfg|4a20067fd57bd603da7d2c1eccae0878f1404ab9
+vendor/etc/fteh.cfg|5e014342f0c9ac3d65ffb6e063b6484f3afff336
+
+# Thermal (Dependencies) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/lib/libifcutils_mtk.so|bf2068aeffcdae1cd937d6490d0e8bcaa4ed1354
+vendor/lib/libthermalalgo.so|e6f6d9e8bfab5d89a56ac059b9f849950db8dd4f
+
+# Thermal (HW Module) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/lib/hw/thermal.mt8183.so|76310546f02d52d31de5ea59c96e0b4926b3b592
+
+# Thermal (Interfaces) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/lib/fireos.hardware.amazonthermal@1.0.so|6172520908693821388ddc310ddbb3621e01467c
+
+# Thermal (Service/Impl) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+vendor/bin/hw/fireos.hardware.amazonthermal@1.0-service|f6ce9a6c575d1a37d9261143a99532f652a9109d
+vendor/etc/init/fireos.hardware.amazonthermal@1.0-service.rc|c9a37740c9e051ed66c3deb4cc9ac2cf55ff3f9f
+vendor/lib/hw/fireos.hardware.amazonthermal@1.0-impl.so|7ba19313dce88faede66dbdca257f0d5af91b68e
+
+# Time Keeping
+vendor/bin/securetime
+vendor/etc/init/securetime.rc
+vendor/lib/fireos.hardware.localtime@1.0.so
+vendor/lib/libcommon_time_client_vendor.so
+
+# Wi-Fi (Service/Impl) - from full_px556_kw-user 10 QP1A.190711.020 1585833944 release-keys
+vendor/bin/hostapd_cli|2d267f7e8c00ef0d7ee6c683aa400cb176fcb25c
+vendor/bin/hw/hostapd|ef3ae9d442f36473155730e0e48e6ff0470d3a71|fb9266b3ae653bba88a1f08ebb3b72539db0dad9
+vendor/bin/hw/wpa_supplicant|7ff5f67b28aca979dbf6edf291f50cb84fdfa7c7|9b69218f731872896e74a7398b250c79741f9ddb
+vendor/etc/init/hostapd.android.rc|0f8128bb83c4cbe80760f1a040960cfe439d2d6f
+
+# Wi-Fi (Init Scripts)
+
+# Wi-Fi (Kernel Modules) - from athena-user 9 PS7327.3326N 0026743733760 amz-p,release-keys
+
+# Wi-Fi (WMT)

@@ -1,0 +1,14 @@
+.DS_Store
+*.zip
+*.img
+*.ko
+*.so
+*.tflite
+adb_keys
+*adbkey*
+athena/prebuilt/zImage-dtb
+athena/prebuilt/vendor/firmware/
+athena/prebuilt/vendor/bin/hw/
+athena/configs/audio/audio-algorithms/
+diagnostics/
+releases/

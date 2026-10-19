@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mixercontrol>
+    <versioncontrol value="1.01">
+    </versioncontrol>
+    <!-- These are the initial mixer settings -->
+    <!-- TLV5140 ADC -->
+    <kctl name="ADC Reset A" value="1" />
+    <kctl name="Ch1 Output A" value="0" />
+    <kctl name="Ch1 Slot Offset A" value="0" />
+    <kctl name="Ch2 Output A" value="0" />
+    <kctl name="Ch2 Slot Offset A" value="32" />
+    <kctl name="Ch3 Output A" value="1" />
+    <kctl name="Ch3 Slot Offset A" value="0" />
+    <kctl name="Ch4 Output A" value="1" />
+    <kctl name="Ch4 Slot Offset A" value="32" />
+    <kctl name="Enable Secondary Output A" value="3" />
+    <kctl name="Ch1 Gain A" value="20" />
+    <kctl name="Ch2 Gain A" value="20" />
+    <kctl name="Ch3 Gain A" value="20" />
+    <kctl name="Ch4 Gain A" value="20" />
+    <kctl name="Ch1 Digital Capture Vol A" value="201" />
+    <kctl name="Ch2 Digital Capture Vol A" value="201" />
+    <kctl name="Ch3 Digital Capture Vol A" value="201" />
+    <kctl name="Ch4 Digital Capture Vol A" value="201" />
+    <kctl name="DRE Trigger Level A" value="4" />
+    <kctl name="DRE Max Gain A" value="11" />
+    <kctl name="Ch1 DRE Enable A" value="0" />
+    <kctl name="Ch2 DRE Enable A" value="0" />
+    <kctl name="Ch3 DRE Enable A" value="0" />
+    <kctl name="Ch4 DRE Enable A" value="0" />
+    <!-- TLV5140 ADC -->
+    <!--Lineout-->
+    <path name="ext_headphone_output" value="turnon">
+        <kctl name="Audio_Amp_R_Switch" value="On" />
+        <kctl name="Audio_Amp_L_Switch" value="On" />
+        <kctl name="Ext_Headphone_Amp_Switch" value="On" />
+    </path>
+    <path name="ext_headphone_output" value="turnoff">
+        <kctl name="Audio_Amp_R_Switch" value="Off" />
+        <kctl name="Audio_Amp_L_Switch" value="Off" />
+        <kctl name="Ext_Headphone_Amp_Switch" value="Off" />
+    </path>
+   <!--mic1 type setting-->
+    <path name="Mic1TypeACCMode" value="setting">
+        <kctl name="Audio_MIC1_Mode_Select" value="ACCMODE" />>
+    </path>
+   <!--mic2 type setting-->
+    <path name="Mic2TypeACCMode" value="setting">
+        <kctl name="Audio_MIC2_Mode_Select" value="ACCMODE" />>
+    </path>
+    <path name="builtin_Mic_SingleMic" value="turnon">
+        <kctl name="Audio_MicSource1_Setting" value="ADC1" />
+        <kctl name="Audio_ADC_1_Switch" value="On" />
+        <kctl name="Audio_ADC_2_Switch" value="On" />
+        <kctl name="Audio_Preamp1_Switch" value="IN_ADC1" />
+        <kctl name="Audio_Preamp2_Switch" value="IN_ADC3" />
+    </path>
+    <path name="builtin_Mic_SingleMic" value="turnoff">
+        <kctl name="Audio_Preamp1_Switch" value="OPEN" />
+        <kctl name="Audio_ADC_1_Switch" value="Off" />
+        <kctl name="Audio_ADC_2_Switch" value="Off" />
+    </path>
+    <!--headphone output-->
+    <path name="headphone_output" value="turnon">
+        <kctl name="Audio_Amp_R_Switch" value="On" />
+        <kctl name="Audio_Amp_L_Switch" value="On" />
+    </path>
+    <path name="headphone_output" value="turnoff">
+        <kctl name="Audio_Amp_R_Switch" value="Off" />
+        <kctl name="Audio_Amp_L_Switch" value="Off" />
+    </path>
+    <!--external_speaker output-->
+    <path name="ext_speaker_output" value="turnon">
+        <kctl name="Ext_Speaker_Amp_Switch" value="On" />
+    </path>
+    <path name="ext_speaker_output" value="turnoff">
+        <kctl name="Ext_Speaker_Amp_Switch" value="Off" />
+    </path>
+</mixercontrol>

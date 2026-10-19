@@ -1,0 +1,45 @@
+//
+// Copyright (C) 2023 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "libshim_nvram",
+    srcs: ["libshim_nvram.cpp"],
+    shared_libs: ["libbase"],
+    proprietary: true,
+}
+
+cc_library_shared {
+    name: "libshim_keymaster",
+    srcs: ["libshim_keymaster.cpp"],
+    proprietary: true,
+}
+
+cc_library_shared {
+    name: "libshim_mtkcam",
+    proprietary: true,
+    compile_multilib: "32",
+    local_include_dirs: ["libinput/include"],
+    srcs: [
+        "libinput/PropertyMap.cpp",
+        "libinput/PropertyMap_fuzz.cpp",
+    ],
+    include_dirs: [ "frameworks/native/include" ],
+    shared_libs: [
+        "libutils",
+        "libbase",
+        "liblog",
+    ],
+}
+
+cc_library_shared {
+    name: "libshim_utils",
+    srcs: ["libshim_utils.cpp"],
+    vendor: true,
+    compile_multilib: "32",
+    shared_libs: [
+        "libutils",
+    ],
+}
